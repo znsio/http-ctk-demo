@@ -3,3 +3,29 @@ sources:
     repository: https://github.com/znsio/http-ctk-demo.git
     test:
       - specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
+report:
+  formatters:
+    - type: text
+      layout: table
+  types:
+    APICoverage:
+      OpenAPI:
+        successCriteria:
+          minThresholdPercentage: 100
+          maxMissedEndpointsInSpec: 0
+          enforce: true
+        excludedEndpoints:
+          - /hub
+          - /hub/{id}
+          - /listener/troubleTicketAttributeValueChangeEvent
+          - /listener/troubleTicketCreateEvent
+          - /listener/troubleTicketDeleteEvent
+          - /listener/troubleTicketInformationRequiredEvent
+          - /listener/troubleTicketResolvedEvent
+          - /listener/troubleTicketSpecificationAttributeValueChangeEvent
+          - /listener/troubleTicketSpecificationCreateEvent
+          - /listener/troubleTicketSpecificationDeleteEvent
+          - /listener/troubleTicketSpecificationStatusChangeEvent
+          - /listener/troubleTicketStatusChangeEvent
+          - /troubleTicketSpecification
+          - /troubleTicketSpecification/{id}
