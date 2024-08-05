@@ -1,4 +1,9 @@
 sources:
-  - provider: filesystem
+  - provider: git
+    repository: https://github.com/znsio/http-ctk-demo.git
     test:
-      - TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
+      - specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
+# sources:
+#   - provider: filesystem
+#     test:
+#       - TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml

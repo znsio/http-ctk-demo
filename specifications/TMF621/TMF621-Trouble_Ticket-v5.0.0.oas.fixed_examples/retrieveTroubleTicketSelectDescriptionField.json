@@ -1,0 +1,17 @@
+{
+    "http-request": {
+        "path": "/troubleTicket/8aaf7d13-c168-41a1-9fc9-d0fb6a3f4533",
+        "method": "GET",
+        "query": {
+            "fields": "description"
+        }
+    },
+    "http-response": {
+        "status": 200,
+        "body": {
+            "description": "I do not accept the last VOD charge, since the movie was constantly interrupted, I had to quick watching the movie in the middle ",
+            "@type": "TroubleTicket",
+            "id": "ef6d4d74-f0d5-4a37-94b8-41136ab7cf34"
+        }
+    }
+}
