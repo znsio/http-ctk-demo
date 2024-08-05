@@ -1,6 +1,6 @@
 {
     "http-request": {
-        "path": "/troubleTicket/8aaf7d13-c168-41a1-9fc9-d0fb6a3f4533",
+        "path": "/troubleTicket/9c0c3601-d518-4be8-9d44-67756f7d7dde",
         "method": "GET",
         "query": {
             "fields": "ticketType"

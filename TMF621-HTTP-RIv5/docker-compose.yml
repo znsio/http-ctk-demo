@@ -1,5 +1,5 @@
 version: '3.8'
-name: tmf621e-async-ri
+name: tmf621-oas-ri
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
