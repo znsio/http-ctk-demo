@@ -1,0 +1,4 @@
+sources:
+  - provider: filesystem
+    test:
+      - TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml

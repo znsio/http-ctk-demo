@@ -1,0 +1,582 @@
+openapi: 3.0.1
+info:
+  title: New feature
+  version: "1"
+paths:
+  /tmf-api/troubleTicket/v5/troubleTicket:
+    post:
+      summary: POST /tmf-api/troubleTicket/v5/troubleTicket/
+      parameters:
+      - name: Connection
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: accept
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: accept-encoding
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TroubleTicket_RequestBody"
+        required: true
+      responses:
+        "201":
+          description: POST /tmf-api/troubleTicket/v5/troubleTicket/
+          headers:
+            X-Powered-By:
+              required: true
+              schema:
+                type: string
+            Connection:
+              required: true
+              schema:
+                type: string
+            Keep-Alive:
+              required: true
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TroubleTicket_ResponseBody"
+  /tmf-api/troubleTicket/v5/troubleTicket/6f94d38e-ae24-478e-a019-4823b61217ea/:
+    get:
+      summary: GET /tmf-api/troubleTicket/v5/troubleTicket/6f94d38e-ae24-478e-a019-4823b61217ea/
+      parameters:
+      - name: fields
+        in: query
+        schema:
+          type: string
+      - name: Connection
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: accept
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: accept-encoding
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: GET /tmf-api/troubleTicket/v5/troubleTicket/6f94d38e-ae24-478e-a019-4823b61217ea/
+          headers:
+            X-Powered-By:
+              required: true
+              schema:
+                type: string
+            Connection:
+              required: true
+              schema:
+                type: string
+            Keep-Alive:
+              required: true
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/6f94d38e-ae24-478e-a019-4823b61217ea_ResponseBody"
+  /tmf-api/troubleTicket/v5/troubleTicket/:
+    get:
+      summary: GET /tmf-api/troubleTicket/v5/troubleTicket/
+      parameters:
+      - name: fields
+        in: query
+        schema:
+          type: string
+      - name: Connection
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: accept
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: accept-encoding
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: GET /tmf-api/troubleTicket/v5/troubleTicket/
+          headers:
+            X-Powered-By:
+              required: true
+              schema:
+                type: string
+            X-Total-Count:
+              required: true
+              schema:
+                type: number
+            X-Result-Count:
+              required: true
+              schema:
+                type: number
+            Link:
+              required: true
+              schema:
+                type: string
+            Connection:
+              required: true
+              schema:
+                type: string
+            Keep-Alive:
+              required: true
+              schema:
+                type: string
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ResponseBody"
+components:
+  schemas:
+    Attachment:
+      required:
+      - '@type'
+      - attachmentType
+      - description
+      - id
+      - mimeType
+      - name
+      - url
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        attachmentType:
+          type: string
+        mimeType:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
+        '@type':
+          type: string
+    Channel:
+      required:
+      - '@type'
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        '@type':
+          type: string
+    Note:
+      required:
+      - '@type'
+      - author
+      - date
+      - id
+      - text
+      properties:
+        id:
+          type: string
+        author:
+          type: string
+        date:
+          type: string
+        text:
+          type: string
+        '@type':
+          type: string
+    Entity:
+      required:
+      - '@referredType'
+      - '@type'
+      - href
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        href:
+          type: string
+        name:
+          type: string
+        '@type':
+          type: string
+        '@referredType':
+          type: string
+        topicRef:
+          type: string
+    RelatedEntity:
+      required:
+      - '@type'
+      - entity
+      - role
+      properties:
+        role:
+          type: string
+        '@type':
+          type: string
+        entity:
+          $ref: "#/components/schemas/Entity"
+    PartyOrPartyRole:
+      required:
+      - '@referredType'
+      - '@type'
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        '@type':
+          type: string
+        '@referredType':
+          type: string
+        href:
+          type: string
+        topicRef:
+          type: string
+    RelatedParty:
+      required:
+      - '@type'
+      - partyOrPartyRole
+      - role
+      properties:
+        role:
+          type: string
+        '@type':
+          type: string
+        partyOrPartyRole:
+          $ref: "#/components/schemas/PartyOrPartyRole"
+    Attachment_:
+      required:
+      - '@type'
+      - attachmentType
+      - description
+      - id
+      - mimeType
+      - name
+      - url
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        attachmentType:
+          type: string
+        mimeType:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
+        '@type':
+          type: string
+    Channel_:
+      required:
+      - '@type'
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        '@type':
+          type: string
+    Note_:
+      required:
+      - '@type'
+      - author
+      - date
+      - id
+      - text
+      properties:
+        id:
+          type: string
+        author:
+          type: string
+        date:
+          type: string
+        text:
+          type: string
+        '@type':
+          type: string
+    Entity_:
+      required:
+      - '@referredType'
+      - '@type'
+      - href
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        href:
+          type: string
+        name:
+          type: string
+        '@type':
+          type: string
+        '@referredType':
+          type: string
+    RelatedEntity_:
+      required:
+      - '@type'
+      - entity
+      - role
+      properties:
+        role:
+          type: string
+        '@type':
+          type: string
+        entity:
+          $ref: "#/components/schemas/Entity_"
+    PartyOrPartyRole_:
+      required:
+      - '@referredType'
+      - '@type'
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        '@type':
+          type: string
+        '@referredType':
+          type: string
+        href:
+          type: string
+    RelatedParty_:
+      required:
+      - '@type'
+      - partyOrPartyRole
+      - role
+      properties:
+        role:
+          type: string
+        '@type':
+          type: string
+        partyOrPartyRole:
+          $ref: "#/components/schemas/PartyOrPartyRole_"
+    TroubleTicket_RequestBody:
+      required:
+      - '@type'
+      - attachment
+      - channel
+      - description
+      - expectedResolutionDate
+      - name
+      - note
+      - relatedEntity
+      - relatedParty
+      - requestedResolutionDate
+      - severity
+      - status
+      - ticketType
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        severity:
+          type: string
+        status:
+          type: string
+        ticketType:
+          type: string
+        expectedResolutionDate:
+          type: string
+        requestedResolutionDate:
+          type: string
+        attachment:
+          type: array
+          items:
+            $ref: "#/components/schemas/Attachment"
+        channel:
+          $ref: "#/components/schemas/Channel"
+        note:
+          type: array
+          items:
+            $ref: "#/components/schemas/Note"
+        relatedEntity:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedEntity"
+        relatedParty:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedParty"
+        '@type':
+          type: string
+    TroubleTicket_ResponseBody:
+      required:
+      - '@type'
+      - attachment
+      - channel
+      - description
+      - expectedResolutionDate
+      - id
+      - name
+      - note
+      - relatedEntity
+      - relatedParty
+      - requestedResolutionDate
+      - severity
+      - status
+      - ticketType
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        severity:
+          type: string
+        status:
+          type: string
+        ticketType:
+          type: string
+        expectedResolutionDate:
+          type: string
+        requestedResolutionDate:
+          type: string
+        attachment:
+          type: array
+          items:
+            $ref: "#/components/schemas/Attachment_"
+        channel:
+          $ref: "#/components/schemas/Channel_"
+        note:
+          type: array
+          items:
+            $ref: "#/components/schemas/Note_"
+        relatedEntity:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedEntity_"
+        relatedParty:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedParty_"
+        '@type':
+          type: string
+        id:
+          type: string
+    ResponseBody:
+      required:
+      - '@type'
+      - id
+      properties:
+        '@type':
+          type: string
+        id:
+          type: string
+        ticketType:
+          type: string
+        severity:
+          type: string
+        description:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        expectedResolutionDate:
+          type: string
+        requestedResolutionDate:
+          type: string
+        attachment:
+          type: array
+          items:
+            $ref: "#/components/schemas/Attachment"
+        channel:
+          $ref: "#/components/schemas/Channel"
+        note:
+          type: array
+          items:
+            $ref: "#/components/schemas/Note"
+        relatedEntity:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedEntity"
+        relatedParty:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedParty"
+    "6f94d38e-ae24-478e-a019-4823b61217ea_ResponseBody":
+      required:
+      - '@type'
+      - id
+      properties:
+        '@type':
+          type: string
+        id:
+          type: string
+        ticketType:
+          type: string
+        severity:
+          type: string
+        description:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        expectedResolutionDate:
+          type: string
+        requestedResolutionDate:
+          type: string
+        attachment:
+          type: array
+          items:
+            $ref: "#/components/schemas/Attachment"
+        channel:
+          $ref: "#/components/schemas/Channel"
+        note:
+          type: array
+          items:
+            $ref: "#/components/schemas/Note"
+        relatedEntity:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedEntity"
+        relatedParty:
+          type: array
+          items:
+            $ref: "#/components/schemas/RelatedParty"

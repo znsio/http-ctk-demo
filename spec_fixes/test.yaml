@@ -1,0 +1,163 @@
+openapi: 3.0.1
+info:
+  title: Trouble Ticket
+  description: "**TMF API Reference : TMF - 621 Trouble Ticket**\nThe Trouble Ticket API provides a standardized client interface to Trouble Ticket Management Systems for creating, tracking and managing trouble tickets as a result of an issue or problem identified by a customer or another system. \nExamples of Trouble Ticket API originators (clients) include CRM applications, network management or fault management systems, or other Trouble Ticket management systems (e.g. B2B).\nThe API supports the ability to send requests to create a new trouble ticket specifying the nature and severity of the trouble or issue as well as all necessary related information. The API also includes mechanisms to search for and update existing trouble tickets. Notifications are defined to provide information when a trouble ticket has been updated, including status changes. A basic set of states of a trouble ticket has been specified (as an example) to handle trouble ticket lifecycle management.\nTrouble Ticketing API manages trouble ticket resource:\n  -\tA trouble ticket represents a record, or an issue raised by requestor that need to be solved, used for reporting and managing the resolution of problems, incidents or request \n -\tMain trouble ticket attributes are its description, severity, type, related dates (creation, expected resolution, resolution), state and related information (change reason and change date), related parties (originator, owner, reviser, etc.), related entities (product, product order, customer bill) and notes \n Trouble Ticket API performs the following operations on trouble ticket: \n -\tRetrieval of a trouble ticket or a collection of trouble ticket depending on filter criteria \n -\tPartial update of a trouble ticket \n -\tCreation of a trouble ticket \n \tNotification of events on trouble ticket: \n \t-\tTrouble ticket state change \n \t-\tTrouble ticket attribute value change \n \t-\tTrouble ticket resoled \n \t-\tTrouble ticket delete (typically restricted to admin role) \n \t-\tTrouble ticket created  \n \t-\tTrouble ticket Information required \n Trouble Ticket API performs the following operations on trouble ticket specification \n-\tRetrieval of a trouble ticket specification or a collection of trouble ticket specification depending on filter criteria \n -\tPartial update of a trouble ticket specification \n-\tCreation of a trouble ticket specification \n-\tNotification of events on trouble ticket specification: \n \t-\tTrouble ticket specification state change \n \t-\tTrouble ticket specification attribute value change \n \t-\tTrouble ticket specification delete (typically restricted to admin role) \n \t-\tTrouble ticket specification created "
+  version: 5.0.0
+  contact:
+    name: test
+servers:
+  - url: '{apiRoot}/tmf-api/troubleTicket/v5'
+    variables:
+      apiRoot:
+        default: 'https://serverRoot'
+        enum:
+          - 'https://serverRoot'
+tags:
+  - name: troubleTicket
+    description: Operations for TroubleTicket Resource
+paths:
+  /party:
+    post:
+      operationId: op-id
+      description: temp
+      tags:
+        - troubleTicket
+      requestBody:
+        description: Data containing the callback endpoint to deliver the information
+        content:
+          application/json:
+            schema:
+              # $ref: '#/components/schemas/PartyRefOrPartyRoleRef'
+              $ref: '#/components/schemas/SimpleType'
+            examples:
+              TEST:
+                value:
+                  id: '9866'
+                  '@type': 'type1'
+                  data1: 'test'
+                  # '@type': PartyRoleRef
+                  # partyId: 'test'
+                  # partyName: 'test'
+
+      responses:
+        '201':
+          description: response
+          content:
+            application/json:
+              schema:
+                type: string
+    
+components:
+  schemas:
+    TestType1:
+      type: object
+      required:
+        - '@type'
+        - id
+        - data1
+      properties:
+        '@type':
+          type: string
+        id:
+          type: string
+        data1:
+          type: string
+    TestType2:
+      type: object
+      required:
+        - '@type'
+        - id
+        - data2
+      properties:
+        '@type':
+          type: string
+        id:
+          type: string
+        data2:
+          type: string
+    SimpleType:
+      oneOf:
+        - $ref: '#/components/schemas/TestType1'
+        - $ref: '#/components/schemas/TestType2'
+      discriminator:
+        propertyName: '@type'
+        mapping:
+          type1: '#/components/schemas/TestType1'
+          type2: '#/components/schemas/TestType2'
+    PartyRef:
+      type: object
+      description: A Party reference
+      allOf:
+        - $ref: '#/components/schemas/EntityRef'
+    PartyRefOrPartyRoleRef:
+      description: ''
+      oneOf:
+        - $ref: '#/components/schemas/PartyRef'
+        - $ref: '#/components/schemas/PartyRoleRef'
+      discriminator:
+        propertyName: '@type'
+        mapping:
+          PartyRef: '#/components/schemas/PartyRef'
+          PartyRoleRef: '#/components/schemas/PartyRoleRef'
+    EntityRef:
+      allOf:
+        - $ref: '#/components/schemas/Extensible'
+        - $ref: '#/components/schemas/Addressable'
+        - type: object
+          description: Entity reference schema to be use for all entityRef class.
+          properties:
+            id:
+              type: string
+              description: The identifier of the referred entity.
+            href:
+              type: string
+              description: The URI of the referred entity.
+            name:
+              type: string
+              description: Name of the referred entity.
+            '@referredType':
+              type: string
+              description: The actual type of the target instance when needed for disambiguation.
+          required:
+            - id
+    Extensible:
+      type: object
+      description: >-
+        Base Extensible schema for use in TMForum Open-APIs - When used for in a schema it means
+        that the Entity described by the schema  MUST be extended with the @type
+      properties:
+        '@type':
+          type: string
+          description: 'When sub-classing, this defines the sub-class Extensible name'
+        '@baseType':
+          type: string
+          description: 'When sub-classing, this defines the super-class'
+        '@schemaLocation':
+          type: string
+          description: A URI to a JSON-Schema file that defines additional attributes and relationships
+      required:
+        - '@type'
+    Addressable:
+      type: object
+      description: Base schema for addressable entities
+      properties:
+        href:
+          type: string
+          description: Hyperlink reference
+        id:
+          type: string
+          description: unique identifier
+    PartyRoleRef:
+      allOf:
+        - $ref: '#/components/schemas/EntityRef'
+        - type: object
+          description: >-
+            Party role reference. A party role represents the part played by a party in a given
+            context.
+          properties:
+            partyId:
+              type: string
+              description: The identifier of the engaged party that is linked to the PartyRole object.
+            partyName:
+              type: string
+              description: The name of the engaged party that is linked to the PartyRole object.
