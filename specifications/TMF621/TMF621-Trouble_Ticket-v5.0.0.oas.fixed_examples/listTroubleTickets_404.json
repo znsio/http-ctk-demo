@@ -1,0 +1,19 @@
+{
+  "http-request": {
+    "path": "/troubleTicket",
+    "method": "GET",
+    "query": {
+      "fields": "_404"
+    }
+  },
+  "http-response": {
+    "status": 404,
+    "body": {
+      "@type": "Error",
+      "code": "ERR404",
+      "reason": "Not Found",
+      "message": "The requested URL was not found on the server.",
+      "referenceError": "https://host/errors"
+    }
+  }
+}
