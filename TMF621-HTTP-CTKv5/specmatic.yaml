@@ -1,6 +1,7 @@
 sources:
   - provider: git
     repository: https://github.com/znsio/http-ctk-demo.git
+    branch: examples
     test:
       - specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
 report:
