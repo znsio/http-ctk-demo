@@ -1,10 +1,7 @@
 {
   "http-request": {
     "path": "/troubleTicket/_503",
-    "method": "DELETE",
-    "headers": {
-      "Content-Type": "application/json"
-    }
+    "method": "DELETE"
   },
   "http-response": {
     "status": 503,
