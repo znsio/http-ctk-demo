@@ -1,0 +1,19 @@
+{
+  "http-request": {
+    "path": "/troubleTicket/_501",
+    "method": "DELETE",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "http-response": {
+    "status": 501,
+    "body": {
+      "@type": "Error",
+      "code": "ERR501",
+      "reason": "The requested operation is not implemented",
+      "message": "The requested operation is not implemented. Please contact the system administrator.",
+      "referenceError": "https://host/errors"
+    }
+  }
+}
