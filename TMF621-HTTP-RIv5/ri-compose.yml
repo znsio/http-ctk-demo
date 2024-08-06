@@ -4,6 +4,8 @@ services:
   specmatic:
     image: znsio/specmatic:2.0.7
     command: stub
+    environment:
+      - SPECMATIC_GENERATIVE_STUB=true
     volumes:
       - ./specmatic.yaml:/usr/src/app/specmatic.yaml
     ports:
