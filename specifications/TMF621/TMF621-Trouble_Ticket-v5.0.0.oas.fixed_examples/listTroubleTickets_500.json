@@ -3,7 +3,7 @@
     "path": "/troubleTicket",
     "method": "GET",
     "query": {
-      "fields": "_severity"
+      "fields": "_500"
     }
   },
   "http-response": {
