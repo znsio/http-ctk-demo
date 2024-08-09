@@ -1,0 +1,9 @@
+{
+  "http-request": {
+    "path": "/troubleTicket/(id:string)",
+    "method": "DELETE"
+  },
+  "http-response": {
+    "status": 204
+  }
+}
