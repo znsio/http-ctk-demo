@@ -3,14 +3,25 @@ sources:
     repository: https://github.com/znsio/http-ctk-demo.git
     test:
       - specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
+
 test:
   resiliencyTests:
     enable: all
+
+workflow:
+  ids:
+    'POST /troubleTicket -> 201':
+      extract: 'BODY.id'
+    '*':
+      use: 'PATH.id'
 
 report:
   formatters:
     - type: text
       layout: table
+    - type: html
+      title: CTK Results
+      heading: CTK Results
   types:
     APICoverage:
       OpenAPI:
