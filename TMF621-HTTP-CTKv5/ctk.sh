@@ -6,7 +6,7 @@ source ../env/bin/activate
 
 python conformance_filter.py
 
-FILTER_NAME=$(python conformance_filter.py)
+FILTER_NAME=$(python conformance_filter.py ./conformance.yaml ../specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml)
 
 echo "FILTER NAME"
 echo $FILTER_NAME
