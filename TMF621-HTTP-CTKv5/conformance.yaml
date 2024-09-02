@@ -1,0 +1,856 @@
+conformance:
+  Hub:
+    attributes:
+      '@baseType':
+        comment: ''
+        condition: ''
+      '@schemaLocation':
+        comment: ''
+        condition: ''
+      '@type':
+        comment: ''
+        condition: M
+      callback:
+        comment: ''
+        condition: M
+      href:
+        comment: ''
+        condition: ''
+      id:
+        comment: ''
+        condition: M (in response messages)
+      query:
+        comment: ''
+        condition: ''
+      topicRef:
+        comment: ''
+        condition: M (in response messages)
+    comment: ''
+    condition: ''
+    operations:
+      DELETE:
+        comment: ''
+        condition: ''
+      POST:
+        comment: ''
+        condition: ''
+    operations-details:
+      POST:
+        mandatory:
+          '@type':
+            rule: ''
+          callback:
+            rule: ''
+  TroubleTicket:
+    attributes:
+      '@baseType':
+        comment: ''
+        condition: ''
+      '@schemaLocation':
+        comment: ''
+        condition: ''
+      '@type':
+        comment: ''
+        condition: M
+      attachment:
+        comment: ''
+        condition: ''
+      attachment.@baseType:
+        comment: ''
+        condition: ''
+      attachment.@referredType:
+        comment: ''
+        condition: ''
+      attachment.@schemaLocation:
+        comment: ''
+        condition: ''
+      attachment.@type:
+        comment: ''
+        condition: M
+      attachment.attachmentType:
+        comment: ''
+        condition: M
+      attachment.content:
+        comment: ''
+        condition: ''
+      attachment.description:
+        comment: ''
+        condition: ''
+      attachment.href:
+        comment: ''
+        condition: ''
+      attachment.id:
+        comment: ''
+        condition: M
+      attachment.mimeType:
+        comment: ''
+        condition: M
+      attachment.name:
+        comment: ''
+        condition: ''
+      attachment.size:
+        comment: ''
+        condition: ''
+      attachment.size.amount:
+        comment: ''
+        condition: ''
+      attachment.size.units:
+        comment: ''
+        condition: ''
+      attachment.topicRef:
+        comment: ''
+        condition: ''
+      attachment.url:
+        comment: ''
+        condition: ''
+      attachment.validFor:
+        comment: ''
+        condition: ''
+      attachment.validFor.endDateTime:
+        comment: ''
+        condition: ''
+      attachment.validFor.startDateTime:
+        comment: ''
+        condition: ''
+      channel:
+        comment: ''
+        condition: ''
+      channel.@baseType:
+        comment: ''
+        condition: ''
+      channel.@referredType:
+        comment: ''
+        condition: ''
+      channel.@schemaLocation:
+        comment: ''
+        condition: ''
+      channel.@type:
+        comment: ''
+        condition: M
+      channel.href:
+        comment: ''
+        condition: ''
+      channel.id:
+        comment: ''
+        condition: M
+      channel.name:
+        comment: ''
+        condition: ''
+      channel.topicRef:
+        comment: ''
+        condition: ''
+      creationDate:
+        comment: ''
+        condition: ''
+      description:
+        comment: ''
+        condition: M
+      expectedResolutionDate:
+        comment: ''
+        condition: ''
+      externalIdentifier:
+        comment: ''
+        condition: ''
+      externalIdentifier.@baseType:
+        comment: ''
+        condition: ''
+      externalIdentifier.@schemaLocation:
+        comment: ''
+        condition: ''
+      externalIdentifier.@type:
+        comment: ''
+        condition: M
+      externalIdentifier.externalIdentifierType:
+        comment: ''
+        condition: ''
+      externalIdentifier.id:
+        comment: ''
+        condition: M
+      externalIdentifier.owner:
+        comment: ''
+        condition: ''
+      href:
+        comment: ''
+        condition: ''
+      id:
+        comment: ''
+        condition: ''
+      lastUpdate:
+        comment: ''
+        condition: ''
+      name:
+        comment: ''
+        condition: ''
+      note:
+        comment: ''
+        condition: ''
+      note.@baseType:
+        comment: ''
+        condition: ''
+      note.@schemaLocation:
+        comment: ''
+        condition: ''
+      note.@type:
+        comment: ''
+        condition: M
+      note.author:
+        comment: ''
+        condition: ''
+      note.date:
+        comment: ''
+        condition: ''
+      note.id:
+        comment: ''
+        condition: ''
+      note.text:
+        comment: ''
+        condition: ''
+      priority:
+        comment: ''
+        condition: ''
+      relatedEntity:
+        comment: ''
+        condition: ''
+      relatedEntity.@baseType:
+        comment: ''
+        condition: ''
+      relatedEntity.@schemaLocation:
+        comment: ''
+        condition: ''
+      relatedEntity.@type:
+        comment: ''
+        condition: M
+      relatedEntity.entity:
+        comment: ''
+        condition: M
+      relatedEntity.entity.@baseType:
+        comment: ''
+        condition: ''
+      relatedEntity.entity.@referredType:
+        comment: ''
+        condition: ''
+      relatedEntity.entity.@schemaLocation:
+        comment: ''
+        condition: ''
+      relatedEntity.entity.@type:
+        comment: ''
+        condition: M
+      relatedEntity.entity.href:
+        comment: ''
+        condition: ''
+      relatedEntity.entity.id:
+        comment: ''
+        condition: M
+      relatedEntity.entity.name:
+        comment: ''
+        condition: ''
+      relatedEntity.entity.topicRef:
+        comment: ''
+        condition: ''
+      relatedEntity.role:
+        comment: ''
+        condition: M
+      relatedParty:
+        comment: ''
+        condition: ''
+      relatedParty.@baseType:
+        comment: ''
+        condition: ''
+      relatedParty.@schemaLocation:
+        comment: ''
+        condition: ''
+      relatedParty.@type:
+        comment: ''
+        condition: M
+      relatedParty.partyOrPartyRole:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@baseType:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@referredType:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@schemaLocation:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@type:
+        comment: ''
+        condition: M
+      relatedParty.partyOrPartyRole.href:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.id:
+        comment: ''
+        condition: M
+      relatedParty.partyOrPartyRole.name:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.partyId:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.partyName:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.topicRef:
+        comment: ''
+        condition: ''
+      relatedParty.role:
+        comment: ''
+        condition: M
+      requestedResolutionDate:
+        comment: ''
+        condition: ''
+      resolutionDate:
+        comment: ''
+        condition: ''
+      severity:
+        comment: ''
+        condition: M
+      status:
+        comment: ''
+        condition: ''
+      statusChangeDate:
+        comment: ''
+        condition: ''
+      statusChangeHistory:
+        comment: ''
+        condition: ''
+      statusChangeHistory.@baseType:
+        comment: ''
+        condition: ''
+      statusChangeHistory.@schemaLocation:
+        comment: ''
+        condition: ''
+      statusChangeHistory.@type:
+        comment: ''
+        condition: M
+      statusChangeHistory.status:
+        comment: ''
+        condition: ''
+      statusChangeHistory.statusChangeDate:
+        comment: ''
+        condition: ''
+      statusChangeHistory.statusChangeReason:
+        comment: ''
+        condition: ''
+      statusChangeReason:
+        comment: ''
+        condition: ''
+      ticketType:
+        comment: ''
+        condition: M
+      topicRef:
+        comment: ''
+        condition: M (in response messages)
+      troubleTicketCharacteristic:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.@baseType:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.@schemaLocation:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.@type:
+        comment: ''
+        condition: M
+      troubleTicketCharacteristic.characteristicRelationship:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.characteristicRelationship.@baseType:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.characteristicRelationship.@schemaLocation:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.characteristicRelationship.@type:
+        comment: ''
+        condition: M
+      troubleTicketCharacteristic.characteristicRelationship.id:
+        comment: ''
+        condition: M
+      troubleTicketCharacteristic.characteristicRelationship.relationshipType:
+        comment: ''
+        condition: M
+      troubleTicketCharacteristic.id:
+        comment: ''
+        condition: ''
+      troubleTicketCharacteristic.name:
+        comment: ''
+        condition: M
+      troubleTicketCharacteristic.valueType:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship.@baseType:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship.@referredType:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship.@schemaLocation:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship.@type:
+        comment: ''
+        condition: M
+      troubleTicketRelationship.href:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship.id:
+        comment: ''
+        condition: M
+      troubleTicketRelationship.name:
+        comment: ''
+        condition: ''
+      troubleTicketRelationship.relationshipType:
+        comment: ''
+        condition: M
+      troubleTicketRelationship.topicRef:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.@baseType:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.@referredType:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.@schemaLocation:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.@type:
+        comment: ''
+        condition: M
+      troubleTicketSpecification.href:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.id:
+        comment: ''
+        condition: M
+      troubleTicketSpecification.name:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.topicRef:
+        comment: ''
+        condition: ''
+      troubleTicketSpecification.version:
+        comment: ''
+        condition: ''
+    comment: ''
+    condition: M
+    operations:
+      DELETE:
+        comment: ''
+        condition: M
+      GET:
+        comment: ''
+        condition: M
+      PATCH:
+        comment: ''
+        condition: ''
+      POST:
+        comment: ''
+        condition: M
+    operations-details:
+      PATCH:
+        non-patchable:
+          '@baseType':
+            rule: ''
+          '@schemaLocation':
+            rule: ''
+          '@type':
+            rule: ''
+          creationDate:
+            rule: ''
+          href:
+            rule: ''
+          id:
+            rule: ''
+          lastUpdate:
+            rule: ''
+          statusChange:
+            rule: ''
+          statusChangeDate:
+            rule: ''
+        patchable:
+          attachment:
+            rule: ''
+          channel:
+            rule: ''
+          description:
+            rule: ''
+          expectedResolutionDate:
+            rule: ''
+          externalIdentifier:
+            rule: ''
+          name:
+            rule: ''
+          note:
+            rule: ''
+          priority:
+            rule: ''
+          relatedEntity:
+            rule: ''
+          relatedParty:
+            rule: ''
+          requestedResolutionDate:
+            rule: ''
+          resolutionDate:
+            rule: ''
+          severity:
+            rule: ''
+          status:
+            rule: ''
+          statusChangeHistory:
+            rule: ''
+          statusChangeReason:
+            rule: ''
+          ticketType:
+            rule: ''
+          troubleTicketCharacteristic:
+            rule: ''
+          troubleTicketRelationship:
+            rule: ''
+          troubleTicketSpecification:
+            rule: ''
+      POST:
+        mandatory:
+          '@type':
+            rule: ''
+          description:
+            rule: ''
+          severity:
+            rule: ''
+          ticketType:
+            rule: ''
+  TroubleTicketAttributeValueChangeEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketCreateEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketDeleteEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketInformationRequiredEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketResolvedEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketSpecification:
+    attributes:
+      '@baseType':
+        comment: ''
+        condition: ''
+      '@schemaLocation':
+        comment: ''
+        condition: ''
+      '@type':
+        comment: ''
+        condition: M
+      creationDate:
+        comment: ''
+        condition: ''
+      description:
+        comment: ''
+        condition: ''
+      href:
+        comment: ''
+        condition: ''
+      id:
+        comment: ''
+        condition: ''
+      lastUpdate:
+        comment: ''
+        condition: ''
+      lifecycleStatus:
+        comment: ''
+        condition: ''
+      name:
+        comment: ''
+        condition: M
+      relatedParty:
+        comment: ''
+        condition: ''
+      relatedParty.@baseType:
+        comment: ''
+        condition: ''
+      relatedParty.@schemaLocation:
+        comment: ''
+        condition: ''
+      relatedParty.@type:
+        comment: ''
+        condition: M
+      relatedParty.partyOrPartyRole:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@baseType:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@referredType:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@schemaLocation:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.@type:
+        comment: ''
+        condition: M
+      relatedParty.partyOrPartyRole.href:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.id:
+        comment: ''
+        condition: M
+      relatedParty.partyOrPartyRole.name:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.partyId:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.partyName:
+        comment: ''
+        condition: ''
+      relatedParty.partyOrPartyRole.topicRef:
+        comment: ''
+        condition: ''
+      relatedParty.role:
+        comment: ''
+        condition: M
+      specCharacteristic:
+        comment: ''
+        condition: ''
+      specCharacteristic.@baseType:
+        comment: ''
+        condition: ''
+      specCharacteristic.@schemaLocation:
+        comment: ''
+        condition: ''
+      specCharacteristic.@type:
+        comment: ''
+        condition: M
+      specCharacteristic.@valueSchemaLocation:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.@baseType:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.@schemaLocation:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.@type:
+        comment: ''
+        condition: M
+      specCharacteristic.charSpecRelationship.characteristicSpecificationId:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.name:
+        comment: ''
+        condition: M
+      specCharacteristic.charSpecRelationship.parentSpecificationHref:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.parentSpecificationId:
+        comment: ''
+        condition: M
+      specCharacteristic.charSpecRelationship.relationshipType:
+        comment: ''
+        condition: M
+      specCharacteristic.charSpecRelationship.validFor:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.validFor.endDateTime:
+        comment: ''
+        condition: ''
+      specCharacteristic.charSpecRelationship.validFor.startDateTime:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.@baseType:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.@schemaLocation:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.@type:
+        comment: ''
+        condition: M
+      specCharacteristic.characteristicValueSpecification.isDefault:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.rangeInterval:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.regex:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.unitOfMeasure:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.validFor:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.validFor.endDateTime:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.validFor.startDateTime:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.valueFrom:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.valueTo:
+        comment: ''
+        condition: ''
+      specCharacteristic.characteristicValueSpecification.valueType:
+        comment: ''
+        condition: ''
+      specCharacteristic.configurable:
+        comment: ''
+        condition: ''
+      specCharacteristic.description:
+        comment: ''
+        condition: ''
+      specCharacteristic.extensible:
+        comment: ''
+        condition: ''
+      specCharacteristic.id:
+        comment: ''
+        condition: ''
+      specCharacteristic.isUnique:
+        comment: ''
+        condition: ''
+      specCharacteristic.maxCardinality:
+        comment: ''
+        condition: ''
+      specCharacteristic.minCardinality:
+        comment: ''
+        condition: ''
+      specCharacteristic.name:
+        comment: ''
+        condition: M
+      specCharacteristic.regex:
+        comment: ''
+        condition: ''
+      specCharacteristic.validFor:
+        comment: ''
+        condition: ''
+      specCharacteristic.validFor.endDateTime:
+        comment: ''
+        condition: ''
+      specCharacteristic.validFor.startDateTime:
+        comment: ''
+        condition: ''
+      specCharacteristic.valueType:
+        comment: ''
+        condition: M
+      topicRef:
+        comment: ''
+        condition: M (in response messages)
+      validFor:
+        comment: ''
+        condition: ''
+      validFor.endDateTime:
+        comment: ''
+        condition: ''
+      validFor.startDateTime:
+        comment: ''
+        condition: ''
+      version:
+        comment: ''
+        condition: ''
+    comment: ''
+    condition: ''
+    operations:
+      DELETE:
+        comment: ''
+        condition: ''
+      GET:
+        comment: ''
+        condition: ''
+      PATCH:
+        comment: ''
+        condition: ''
+      POST:
+        comment: ''
+        condition: ''
+    operations-details:
+      PATCH:
+        non-patchable:
+          '@baseType':
+            rule: ''
+          '@schemaLocation':
+            rule: ''
+          '@type':
+            rule: ''
+          creationDate:
+            rule: ''
+          href:
+            rule: ''
+          id:
+            rule: ''
+          lastUpdate:
+            rule: ''
+        patchable:
+          description:
+            rule: ''
+          lifecycleStatus:
+            rule: ''
+          name:
+            rule: ''
+          relatedParty:
+            rule: ''
+          specCharacteristic:
+            rule: ''
+          validFor:
+            rule: ''
+          version:
+            rule: ''
+      POST:
+        mandatory:
+          '@type':
+            rule: ''
+          name:
+            rule: ''
+  TroubleTicketSpecificationAttributeValueChangeEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketSpecificationCreateEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketSpecificationDeleteEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketSpecificationStatusChangeEvent:
+    comment: ''
+    condition: ''
+  TroubleTicketStatusChangeEvent:
+    comment: ''
+    condition: ''
+  notifications:
+  - TroubleTicketAttributeValueChangeEvent
+  - TroubleTicketSpecificationCreateEvent
+  - TroubleTicketSpecificationDeleteEvent
+  - TroubleTicketSpecificationStatusChangeEvent
+  - TroubleTicketResolvedEvent
+  - TroubleTicketDeleteEvent
+  - TroubleTicketInformationRequiredEvent
+  - TroubleTicketSpecificationAttributeValueChangeEvent
+  - TroubleTicketCreateEvent
+  - TroubleTicketStatusChangeEvent
+  resources:
+  - TroubleTicketSpecification
+  - TroubleTicket
+  - Hub
