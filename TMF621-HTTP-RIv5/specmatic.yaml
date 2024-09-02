@@ -1,7 +1,7 @@
-sources:
-  - provider: git
+contract_repositories:
+  - type: git
     repository: https://github.com/znsio/http-ctk-demo.git
-    stub:
+    consumes:
       - specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
 stub:
   generative: true

@@ -2,7 +2,7 @@ version: '3'
 
 services:
   specmatic:
-    image: znsio/specmatic:2.0.8
+    image: znsio/specmatic:2.0.17
     command: stub
     volumes:
       - ./specmatic.yaml:/usr/src/app/specmatic.yaml
