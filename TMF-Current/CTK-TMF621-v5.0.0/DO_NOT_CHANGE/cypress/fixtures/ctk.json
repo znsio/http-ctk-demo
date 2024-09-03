@@ -1,0 +1,313 @@
+{
+    "generated": "2023-09-04T22:08:00",
+    "api": "TMF621",
+    "apiVersion": "5.0.0",
+    "tests": {
+        "1": {
+            "type": "auto",
+            "method": "POST",
+            "collection": false,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                201
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket",
+            "body": "config.json#/payloads/TroubleTicket/POST/payload",
+            "headers": "config.json#/headers",
+            "query": "",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API POST Operation Conformance - For TroubleTicket Resource",
+            "mandatoryKeys": [
+                "@type",
+                "attachment.@type",
+                "attachment.attachmentType",
+                "attachment.id",
+                "attachment.mimeType",
+                "channel.@type",
+                "channel.id",
+                "description",
+                "externalIdentifier.@type",
+                "externalIdentifier.id",
+                "note.@type",
+                "relatedEntity.@type",
+                "relatedEntity.entity",
+                "relatedEntity.entity.@type",
+                "relatedEntity.entity.id",
+                "relatedEntity.role",
+                "relatedParty.@type",
+                "relatedParty.partyOrPartyRole.@type",
+                "relatedParty.partyOrPartyRole.id",
+                "relatedParty.role",
+                "severity",
+                "statusChangeHistory.@type",
+                "ticketType",
+                "troubleTicketCharacteristic.@type",
+                "troubleTicketCharacteristic.characteristicRelationship.@type",
+                "troubleTicketCharacteristic.characteristicRelationship.id",
+                "troubleTicketCharacteristic.characteristicRelationship.relationshipType",
+                "troubleTicketCharacteristic.name",
+                "troubleTicketRelationship.@type",
+                "troubleTicketRelationship.id",
+                "troubleTicketRelationship.relationshipType",
+                "troubleTicketSpecification.@type",
+                "troubleTicketSpecification.id"
+            ]
+        },
+        "2": {
+            "type": "auto",
+            "method": "GET",
+            "collection": true,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200,
+                206
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket",
+            "body": "",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource",
+            "headers": "config.json#/headers",
+            "query": "",
+            "mandatoryKeys": [
+                "@type",
+                "attachment.@type",
+                "attachment.attachmentType",
+                "attachment.id",
+                "attachment.mimeType",
+                "channel.@type",
+                "channel.id",
+                "description",
+                "externalIdentifier.@type",
+                "externalIdentifier.id",
+                "href",
+                "note.@type",
+                "relatedEntity.@type",
+                "relatedEntity.entity",
+                "relatedEntity.entity.@type",
+                "relatedEntity.entity.id",
+                "relatedEntity.role",
+                "relatedParty.@type",
+                "relatedParty.partyOrPartyRole.@type",
+                "relatedParty.partyOrPartyRole.id",
+                "relatedParty.role",
+                "severity",
+                "statusChangeHistory.@type",
+                "ticketType",
+                "troubleTicketCharacteristic.@type",
+                "troubleTicketCharacteristic.characteristicRelationship.@type",
+                "troubleTicketCharacteristic.characteristicRelationship.id",
+                "troubleTicketCharacteristic.characteristicRelationship.relationshipType",
+                "troubleTicketCharacteristic.name",
+                "troubleTicketRelationship.@type",
+                "troubleTicketRelationship.id",
+                "troubleTicketRelationship.relationshipType",
+                "troubleTicketSpecification.@type",
+                "troubleTicketSpecification.id"
+            ]
+        },
+        "3": {
+            "type": "auto",
+            "method": "GET",
+            "collection": false,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket/{id}",
+            "body": "",
+            "headers": "config.json#/headers",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource",
+            "query": "",
+            "mandatoryKeys": [
+                "@type",
+                "attachment.@type",
+                "attachment.attachmentType",
+                "attachment.id",
+                "attachment.mimeType",
+                "channel.@type",
+                "channel.id",
+                "description",
+                "externalIdentifier.@type",
+                "externalIdentifier.id",
+                "href",
+                "note.@type",
+                "relatedEntity.@type",
+                "relatedEntity.entity",
+                "relatedEntity.entity.@type",
+                "relatedEntity.entity.id",
+                "relatedEntity.role",
+                "relatedParty.@type",
+                "relatedParty.partyOrPartyRole.@type",
+                "relatedParty.partyOrPartyRole.id",
+                "relatedParty.role",
+                "severity",
+                "statusChangeHistory.@type",
+                "ticketType",
+                "troubleTicketCharacteristic.@type",
+                "troubleTicketCharacteristic.characteristicRelationship.@type",
+                "troubleTicketCharacteristic.characteristicRelationship.id",
+                "troubleTicketCharacteristic.characteristicRelationship.relationshipType",
+                "troubleTicketCharacteristic.name",
+                "troubleTicketRelationship.@type",
+                "troubleTicketRelationship.id",
+                "troubleTicketRelationship.relationshipType",
+                "troubleTicketSpecification.@type",
+                "troubleTicketSpecification.id"
+            ]
+        },
+        "4": {
+            "type": "auto",
+            "method": "GET",
+            "collection": false,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket/{id}",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "?fields=description",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - /{id}?fields=...&{filtering}",
+            "mandatoryKeys": [
+                "description",
+                "@type",
+                "id",
+                "href"
+            ]
+        },
+        "5": {
+            "type": "auto",
+            "method": "GET",
+            "collection": true,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200,
+                206
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "?fields=description",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - ?fields=...&{filtering}",
+            "mandatoryKeys": [
+                "description",
+                "@type",
+                "id",
+                "href"
+            ]
+        },
+        "10": {
+            "type": "auto",
+            "method": "GET",
+            "collection": true,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200,
+                206
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "?fields=severity",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - ?fields=...&{filtering}",
+            "mandatoryKeys": [
+                "severity",
+                "@type",
+                "id",
+                "href"
+            ]
+        },
+        "11": {
+            "type": "auto",
+            "method": "GET",
+            "collection": false,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket/{id}",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "?fields=severity",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - /{id}",
+            "mandatoryKeys": [
+                "severity",
+                "@type",
+                "id",
+                "href"
+            ]
+        },
+        "14": {
+            "type": "auto",
+            "method": "GET",
+            "collection": false,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket/{id}",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "?fields=ticketType",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - /{id}?fields=...&{filtering}",
+            "mandatoryKeys": [
+                "ticketType",
+                "@type",
+                "id",
+                "href"
+            ]
+        },
+        "15": {
+            "type": "auto",
+            "method": "GET",
+            "collection": true,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200,
+                206
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "?fields=ticketType",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - ?fields=...&{filtering}",
+            "mandatoryKeys": [
+                "ticketType",
+                "@type",
+                "id",
+                "href"
+            ]
+        },
+        "18": {
+            "type": "auto",
+            "method": "GET",
+            "collection": true,
+            "schemaRef": "#/components/schemas/TroubleTicket",
+            "statusCodes": [
+                200,
+                206
+            ],
+            "basePath": "config.json#/url",
+            "path": "/troubleTicket",
+            "body": "",
+            "headers": "config.json#/headers",
+            "query": "",
+            "filterKey": "ticketType",
+            "filterValue": "config.json#/payloads/TroubleTicket/POST/payload/ticketType",
+            "testContext": "TMF621 Conformance Profile v5.0.0 - API GET Operation Conformance - For TroubleTicket Resource - Definitions for Filter / Filtered Search",
+            "mandatoryKeys": [
+                "ticketType",
+                "@type",
+                "id",
+                "href"
+            ]
+        }
+    }
+}

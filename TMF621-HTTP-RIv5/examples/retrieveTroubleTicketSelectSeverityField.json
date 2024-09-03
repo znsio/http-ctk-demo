@@ -1,0 +1,17 @@
+{
+    "http-request": {
+        "path": "/troubleTicket/9c0c3601-d518-4be8-9d44-67756f7d7dde",
+        "method": "GET",
+        "query": {
+            "fields": "severity"
+        }
+    },
+    "http-response": {
+        "status": 200,
+        "body": {
+            "severity": "Major",
+            "@type": "TroubleTicket",
+            "id": "ef6d4d74-f0d5-4a37-94b8-41136ab7cf34"
+        }
+    }
+}

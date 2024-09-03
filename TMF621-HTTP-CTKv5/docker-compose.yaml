@@ -12,5 +12,6 @@ services:
       - './specmatic.yaml:/usr/src/app/specmatic.yaml'
     command: >
       test
+      --examples './examples'
       --filter-name "$FILTER_NAME"
       --testBaseURL='http://host.docker.internal:8621/tmf-api/troubleTicket/v5'

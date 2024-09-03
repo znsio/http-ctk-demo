@@ -3,9 +3,10 @@ version: '3'
 services:
   specmatic:
     image: znsio/specmatic:2.0.17
-    command: stub
+    command: stub --examples /usr/src/app/examples
     volumes:
       - ./specmatic.yaml:/usr/src/app/specmatic.yaml
+      - ./examples:/usr/src/app/examples
     ports:
       - "9000"
 
