@@ -13,6 +13,6 @@ services:
     command: >
       test
       --examples '/usr/src/app/examples'
-      --filter-not-name 'TroubleTicket_create_example'
-      --filter-name 'DELETE /troubleTicket/(id:string) -> 204,GET /troubleTicket -> 200,GET /troubleTicket/(id:string) -> 200,POST /troubleTicket -> 201'
+      --filter-not-name 'TroubleTicket_create_example, -> 202'
+      --filter-name 'DELETE /troubleTicket/(id:string),GET /troubleTicket ->,GET /troubleTicket/(id:string),POST /troubleTicket ->'
       --testBaseURL='http://host.docker.internal:8621/tmf-api/troubleTicket/v5'
