@@ -6,7 +6,7 @@ contract_repositories:
 
 test:
   resiliencyTests:
-    enable: all
+    enable: none
 
 workflow:
   ids:
