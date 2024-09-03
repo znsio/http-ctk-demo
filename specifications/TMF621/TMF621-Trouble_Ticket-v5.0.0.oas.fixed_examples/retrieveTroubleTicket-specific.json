@@ -1,6 +1,6 @@
 {
     "http-request": {
-        "path": "//troubleTicket/ef6d4d74-f0d5-4a37-94b8-41136ab7cf34/",
+        "path": "/troubleTicket/ef6d4d74-f0d5-4a37-94b8-41136ab7cf34",
         "method": "GET"
     },
     "http-response": {
