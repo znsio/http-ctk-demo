@@ -3,3 +3,5 @@ build
 SEND_ME
 .idea
 **/.specmatic
+**/SENDME.html
+**/SENDME.json

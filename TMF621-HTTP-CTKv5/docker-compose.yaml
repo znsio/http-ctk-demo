@@ -9,9 +9,10 @@ services:
     volumes:
       - './SEND_ME:/usr/src/app/build/reports/specmatic/html:rw'
       - './specmatic.yaml:/usr/src/app/specmatic.yaml'
+      - './examples:/usr/src/app/examples'
     command: >
       test
-      --examples './examples'
+      --examples '/usr/src/app/examples'
       --filter-not-name 'TroubleTicket_create_example'
       --filter-name 'DELETE /troubleTicket/(id:string) -> 204,GET /troubleTicket -> 200,GET /troubleTicket/(id:string) -> 200,POST /troubleTicket -> 201'
       --testBaseURL='http://host.docker.internal:8621/tmf-api/troubleTicket/v5'
