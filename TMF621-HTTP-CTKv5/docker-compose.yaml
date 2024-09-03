@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ctk:
+    image: znsio/specmatic:2.0.17
+    environment:
+      MAX_TEST_REQUEST_COMBINATIONS: 5
+      EXTENSIBLE_SCHEMA: 'true'
+      FILTER_NAME: 'DELETE /troubleTicket/(id:string) -> 204,GET /troubleTicket -> 200,GET /troubleTicket/(id:string) -> 200,POST /troubleTicket -> 201'
+    volumes:
+      - './SEND_ME:/usr/src/app/build/reports/specmatic/html:rw'
+      - './specmatic.yaml:/usr/src/app/specmatic.yaml'
+    command: >
+      test
+      --filter-name "$FILTER_NAME"
+      --testBaseURL='http://host.docker.internal:8621/tmf-api/troubleTicket/v5'
