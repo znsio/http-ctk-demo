@@ -1,0 +1,4759 @@
+conformance:
+
+  resources:
+   - CancelProductOrder
+   - ProductOrder
+   - Hub
+
+  notifications:
+   - ProductOrderInformationRequiredEvent
+   - ProductOrderCreateEvent
+   - ProductOrderStateChangeEvent
+   - CancelProductOrderInformationRequiredEvent
+   - ProductOrderMilestoneEvent
+   - ProductOrderJeopardyAlertEvent
+   - CancelProductOrderCreateEvent
+   - ProductOrderAttributeValueChangeEvent
+   - CancelProductOrderStateChangeEvent
+   - ProductOrderDeleteEvent
+   - ProductOrderErrorMessageEvent
+
+  CancelProductOrder:
+    condition: ""
+    comment: ""
+    operations:
+      GET:
+        condition: M
+        comment: ""
+      POST:
+        condition: M
+        comment: ""
+    attributes:
+      '@baseType':
+        condition: ""
+        comment: ""
+      '@schemaLocation':
+        condition: ""
+        comment: ""
+      '@type':
+        condition: M
+        comment: ""
+      cancellationReason:
+        condition: ""
+        comment: ""
+      creationDate:
+        condition: ""
+        comment: ""
+      effectiveCancellationDate:
+        condition: ""
+        comment: ""
+      href:
+        condition: M (in response messages)
+        comment: ""
+      id:
+        condition: M (in response messages)
+        comment: ""
+      productOrder:
+        condition: M
+        comment: ""
+      productOrder.@baseType:
+        condition: ""
+        comment: ""
+      productOrder.@referredType:
+        condition: ""
+        comment: ""
+      productOrder.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrder.@type:
+        condition: M
+        comment: ""
+      productOrder.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrder.id:
+        condition: M
+        comment: ""
+      productOrder.name:
+        condition: ""
+        comment: ""
+      requestedCancellationDate:
+        condition: ""
+        comment: ""
+      state:
+        condition: M (in response messages)
+        comment: ""
+    operations-details:
+      POST:
+        mandatory:
+          '@type':
+            rule: ""
+          productOrder:
+            rule: ""
+          productOrder.@type:
+            rule: ""
+          productOrder.id:
+            rule: ""
+
+  CancelProductOrderCreateEvent:
+    condition: ""
+    comment: ""
+
+  CancelProductOrderInformationRequiredEvent:
+    condition: ""
+    comment: ""
+
+  CancelProductOrderStateChangeEvent:
+    condition: ""
+    comment: ""
+
+  Hub:
+    condition: ""
+    comment: ""
+    operations:
+      POST:
+        condition: ""
+        comment: ""
+      DELETE:
+        condition: ""
+        comment: ""
+    attributes:
+      '@baseType':
+        condition: ""
+        comment: ""
+      '@schemaLocation':
+        condition: ""
+        comment: ""
+      '@type':
+        condition: M
+        comment: ""
+      callback:
+        condition: M
+        comment: ""
+      href:
+        condition: M (in response messages)
+        comment: ""
+      id:
+        condition: M (in response messages)
+        comment: ""
+      query:
+        condition: ""
+        comment: ""
+    operations-details:
+      POST:
+        mandatory:
+          '@type':
+            rule: ""
+          callback:
+            rule: ""
+
+  ProductOrder:
+    condition: M
+    comment: ""
+    operations:
+      GET:
+        condition: M
+        comment: ""
+      POST:
+        condition: M
+        comment: ""
+      PATCH:
+        condition: ""
+        comment: ""
+      DELETE:
+        condition: ""
+        comment: ""
+    attributes:
+      '@baseType':
+        condition: ""
+        comment: ""
+      '@schemaLocation':
+        condition: ""
+        comment: ""
+      '@type':
+        condition: M
+        comment: ""
+      agreement:
+        condition: ""
+        comment: ""
+      agreement.@baseType:
+        condition: ""
+        comment: ""
+      agreement.@referredType:
+        condition: ""
+        comment: ""
+      agreement.@schemaLocation:
+        condition: ""
+        comment: ""
+      agreement.@type:
+        condition: M
+        comment: ""
+      agreement.href:
+        condition: M (in response messages)
+        comment: ""
+      agreement.id:
+        condition: M
+        comment: ""
+      agreement.name:
+        condition: ""
+        comment: ""
+      billingAccount:
+        condition: ""
+        comment: Must be managed when recurring charge are present
+      billingAccount.@baseType:
+        condition: ""
+        comment: ""
+      billingAccount.@referredType:
+        condition: ""
+        comment: ""
+      billingAccount.@schemaLocation:
+        condition: ""
+        comment: ""
+      billingAccount.@type:
+        condition: M
+        comment: ""
+      billingAccount.href:
+        condition: M (in response messages)
+        comment: ""
+      billingAccount.id:
+        condition: M
+        comment: ""
+      billingAccount.name:
+        condition: ""
+        comment: ""
+      billingAccount.ratingType:
+        condition: ""
+        comment: ""
+      cancellationDate:
+        condition: ""
+        comment: ""
+      cancellationReason:
+        condition: ""
+        comment: ""
+      category:
+        condition: ""
+        comment: ""
+      channel:
+        condition: ""
+        comment: ""
+      channel.@baseType:
+        condition: ""
+        comment: ""
+      channel.@schemaLocation:
+        condition: ""
+        comment: ""
+      channel.@type:
+        condition: M
+        comment: ""
+      channel.channel:
+        condition: M
+        comment: ""
+      channel.channel.@baseType:
+        condition: ""
+        comment: ""
+      channel.channel.@referredType:
+        condition: ""
+        comment: ""
+      channel.channel.@schemaLocation:
+        condition: ""
+        comment: ""
+      channel.channel.@type:
+        condition: M
+        comment: ""
+      channel.channel.href:
+        condition: M (in response messages)
+        comment: ""
+      channel.channel.id:
+        condition: M
+        comment: ""
+      channel.channel.name:
+        condition: ""
+        comment: ""
+      channel.role:
+        condition: M
+        comment: ""
+      completionDate:
+        condition: M (in response messages)
+        comment: If product order is completed
+      creationDate:
+        condition: M (in response messages)
+        comment: ""
+      description:
+        condition: ""
+        comment: ""
+      expectedCompletionDate:
+        condition: ""
+        comment: ""
+      externalId:
+        condition: ""
+        comment: ""
+      externalId.@baseType:
+        condition: ""
+        comment: ""
+      externalId.@schemaLocation:
+        condition: ""
+        comment: ""
+      externalId.@type:
+        condition: M
+        comment: ""
+      externalId.externalIdentifierType:
+        condition: ""
+        comment: ""
+      externalId.id:
+        condition: M
+        comment: ""
+      externalId.owner:
+        condition: ""
+        comment: ""
+      href:
+        condition: M (in response messages)
+        comment: ""
+      id:
+        condition: ""
+        comment: ""
+      note:
+        condition: ""
+        comment: ""
+      note.@baseType:
+        condition: ""
+        comment: ""
+      note.@schemaLocation:
+        condition: ""
+        comment: ""
+      note.@type:
+        condition: M
+        comment: ""
+      note.author:
+        condition: ""
+        comment: ""
+      note.date:
+        condition: ""
+        comment: ""
+      note.id:
+        condition: ""
+        comment: ""
+      note.system:
+        condition: ""
+        comment: ""
+      note.text:
+        condition: ""
+        comment: ""
+      notificationContact:
+        condition: ""
+        comment: ""
+      orderRelationship:
+        condition: ""
+        comment: ""
+      orderRelationship.@baseType:
+        condition: ""
+        comment: ""
+      orderRelationship.@referredType:
+        condition: ""
+        comment: ""
+      orderRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderRelationship.@type:
+        condition: M
+        comment: ""
+      orderRelationship.href:
+        condition: M (in response messages)
+        comment: ""
+      orderRelationship.id:
+        condition: M
+        comment: ""
+      orderRelationship.name:
+        condition: ""
+        comment: ""
+      orderRelationship.relationshipType:
+        condition: M
+        comment: ""
+      orderTotalPrice:
+        condition: ""
+        comment: At least itemPrice is mandatory if price are defined in catalog for this offering
+      orderTotalPrice.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.billingAccount:
+        condition: ""
+        comment: ""
+      orderTotalPrice.billingAccount.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.billingAccount.@referredType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.billingAccount.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.billingAccount.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.billingAccount.href:
+        condition: M (in response messages)
+        comment: ""
+      orderTotalPrice.billingAccount.id:
+        condition: M
+        comment: ""
+      orderTotalPrice.billingAccount.name:
+        condition: ""
+        comment: ""
+      orderTotalPrice.billingAccount.ratingType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.description:
+        condition: ""
+        comment: ""
+      orderTotalPrice.name:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price:
+        condition: M
+        comment: ""
+      orderTotalPrice.price.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.percentage:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      orderTotalPrice.price.taxRate:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.priceAlteration.applicationDuration:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.description:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.name:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price:
+        condition: M
+        comment: ""
+      orderTotalPrice.priceAlteration.price.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.priceAlteration.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.percentage:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.price.taxRate:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.priceType:
+        condition: M
+        comment: ""
+      orderTotalPrice.priceAlteration.priority:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceAlteration.unitOfMeasure:
+        condition: ""
+        comment: ""
+      orderTotalPrice.priceType:
+        condition: M
+        comment: ""
+      orderTotalPrice.productOfferingPrice:
+        condition: ""
+        comment: ""
+      orderTotalPrice.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      orderTotalPrice.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      orderTotalPrice.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      orderTotalPrice.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      orderTotalPrice.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      orderTotalPrice.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      orderTotalPrice.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      orderTotalPrice.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      orderTotalPrice.unitOfMeasure:
+        condition: ""
+        comment: ""
+      payment:
+        condition: ""
+        comment: Must be managed when payment must be captured
+      payment.@baseType:
+        condition: ""
+        comment: ""
+      payment.@referredType:
+        condition: ""
+        comment: ""
+      payment.@schemaLocation:
+        condition: ""
+        comment: ""
+      payment.@type:
+        condition: M
+        comment: ""
+      payment.href:
+        condition: M (in response messages)
+        comment: ""
+      payment.id:
+        condition: M
+        comment: ""
+      payment.name:
+        condition: ""
+        comment: ""
+      priority:
+        condition: ""
+        comment: ""
+      productOfferingQualification:
+        condition: ""
+        comment: ""
+      productOfferingQualification.@baseType:
+        condition: ""
+        comment: ""
+      productOfferingQualification.@referredType:
+        condition: ""
+        comment: ""
+      productOfferingQualification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOfferingQualification.@type:
+        condition: M
+        comment: ""
+      productOfferingQualification.href:
+        condition: M (in response messages)
+        comment: ""
+      productOfferingQualification.id:
+        condition: M
+        comment: ""
+      productOfferingQualification.name:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.@baseType:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.@type:
+        condition: M
+        comment: ""
+      productOrderErrorMessage.code:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.message:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.productOrderItem:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.productOrderItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.productOrderItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.productOrderItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.productOrderItem.@type:
+        condition: M
+        comment: ""
+      productOrderErrorMessage.productOrderItem.ProductOrderHref:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.productOrderItem.productOrderId:
+        condition: M
+        comment: ""
+      productOrderErrorMessage.productOrderItem.productOrderItemId:
+        condition: M
+        comment: ""
+      productOrderErrorMessage.reason:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.referenceError:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.status:
+        condition: ""
+        comment: ""
+      productOrderErrorMessage.timestamp:
+        condition: ""
+        comment: ""
+      productOrderItem:
+        condition: M
+        comment: ""
+      productOrderItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.@type:
+        condition: M
+        comment: ""
+      productOrderItem.action:
+        condition: M
+        comment: ""
+      productOrderItem.appointment:
+        condition: ""
+        comment: ""
+      productOrderItem.appointment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.appointment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.appointment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.appointment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.appointment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.appointment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.appointment.id:
+        condition: M
+        comment: ""
+      productOrderItem.appointment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.billingAccount:
+        condition: ""
+        comment: Must be managed when recurring charge are present
+      productOrderItem.billingAccount.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.billingAccount.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.billingAccount.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.billingAccount.@type:
+        condition: M
+        comment: ""
+      productOrderItem.billingAccount.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.billingAccount.id:
+        condition: M
+        comment: ""
+      productOrderItem.billingAccount.name:
+        condition: ""
+        comment: ""
+      productOrderItem.billingAccount.ratingType:
+        condition: ""
+        comment: ""
+      productOrderItem.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.billingAccount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.billingAccount.ratingType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.description:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price:
+        condition: M
+        comment: Mandatory if price are defined in catalog for this offering
+      productOrderItem.itemPrice.price.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.percentage:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.price.taxRate:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration:
+        condition: ""
+        comment: Mandatory if priceAlteration are defined in catalog for this offering
+      productOrderItem.itemPrice.priceAlteration.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.applicationDuration:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.description:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.percentage:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.price.taxRate:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.priceType:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.priority:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceAlteration.unitOfMeasure:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.priceType:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.itemPrice.unitOfMeasure:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTerm.description:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.duration:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.duration.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.duration.units:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTerm.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice:
+        condition: ""
+        comment: At least itemPrice is mandatory if price are defined in catalog for this offering
+      productOrderItem.itemTotalPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.billingAccount.ratingType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.description:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.price.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.percentage:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.price.taxRate:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.applicationDuration:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.description:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.percentage:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.price.taxRate:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.priceType:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.priority:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceAlteration.unitOfMeasure:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.priceType:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.itemTotalPrice.unitOfMeasure:
+        condition: ""
+        comment: ""
+      productOrderItem.note:
+        condition: ""
+        comment: ""
+      productOrderItem.note.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.note.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.note.@type:
+        condition: M
+        comment: ""
+      productOrderItem.note.author:
+        condition: ""
+        comment: ""
+      productOrderItem.note.date:
+        condition: ""
+        comment: ""
+      productOrderItem.note.id:
+        condition: ""
+        comment: ""
+      productOrderItem.note.system:
+        condition: ""
+        comment: ""
+      productOrderItem.note.text:
+        condition: ""
+        comment: ""
+      productOrderItem.payment:
+        condition: ""
+        comment: ""
+      productOrderItem.payment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.payment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.payment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.payment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.payment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.payment.id:
+        condition: M
+        comment: ""
+      productOrderItem.payment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product:
+        condition: ""
+        comment: ""
+      productOrderItem.product.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.agreementItem:
+        condition: ""
+        comment: ""
+      productOrderItem.product.agreementItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.agreementItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.agreementItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.agreementItem.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.agreementItem.agreementHref:
+        condition: ""
+        comment: ""
+      productOrderItem.product.agreementItem.agreementId:
+        condition: M
+        comment: ""
+      productOrderItem.product.agreementItem.agreementItemId:
+        condition: M
+        comment: ""
+      productOrderItem.product.agreementItem.agreementName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.billingAccount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.billingAccount.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.billingAccount.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.billingAccount.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.billingAccount.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.billingAccount.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.billingAccount.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.billingAccount.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.billingAccount.ratingType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.creationDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.intent.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.characteristic.characteristicRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.characteristicRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.characteristicRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.characteristicRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.characteristic.characteristicRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.characteristic.characteristicRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.characteristic.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.characteristic.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.characteristic.valueType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.context:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.creationDate:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.expression:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.expression.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.expression.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.expression.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.expression.expressionLanguage:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.expression.expressionValue:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.expression.iri:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.intent.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.@referredType:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.associationSpec.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.role:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentRelationship.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentSpecification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.intentSpecification.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.isBundle:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.lastUpdate:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.lifecycleStatus:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.priority:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.partyId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.partyOrPartyRole.partyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.relatedParty.role:
+        condition: M
+        comment: ""
+      productOrderItem.product.intent.statusChangeDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.intent.version:
+        condition: ""
+        comment: ""
+      productOrderItem.product.isBundle:
+        condition: ""
+        comment: ""
+      productOrderItem.product.isCustomerVisible:
+        condition: ""
+        comment: ""
+      productOrderItem.product.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.orderDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place:
+        condition: ""
+        comment: Required to any product ordered requiring an installation address or shipping address for example
+      productOrderItem.product.place.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.bbox:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.calendar.day:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.hourPeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.hourPeriod.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.hourPeriod.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.hourPeriod.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.calendar.hourPeriod.endHour:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.hourPeriod.startHour:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.calendar.status:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.calendar.timeZone:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.city:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.code:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.country:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.countryCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.countryCode.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.countryCode.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.countryCode.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.countryCode.format:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.countryCode.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.countryCode.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.countryCode.value:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.creationDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier.externalIdentifierType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.externalIdentifier.owner:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicAddressType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.bbox:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.geographicLocation.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.buildingName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.levelNumber:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.levelType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.privateStreetName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.privateStreetNumber:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subAddressType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subUnit:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subUnit.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subUnit.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subUnit.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subUnit.subUnitNumber:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.geographicSubAddress.subUnit.subUnitType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.locality:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.place:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.postcode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.account.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.agreement.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.aristocraticTitle:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.birthDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.characteristic.valueType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.contactType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.preferred:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.contactMedium.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.countryOfBirth:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.creditProfileDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.creditRiskRating:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.creditScore:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditProfile.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.creditAgencyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.creditAgencyType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.ratingReference:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.ratingScore:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.creditRating.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.deathDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.disability:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.disability.disabilityCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.disability.disabilityName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.disability.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.disability.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.disability.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.engagedParty.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.existsDuring:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.existsDuring.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.existsDuring.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference.externalIdentifierType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.externalReference.owner:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.familyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.familyNamePrefix:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.formattedName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.gender:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.generation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.givenName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.identificationId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.identificationType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.issuingAuthority:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.issuingDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.individualIdentification.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.isHeadOffice:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.isLegalEntity:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.isFavouriteLanguage:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.languageCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.languageName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.listeningProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.readingProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.speakingProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.languageAbility.writingProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.legalName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.location:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.maritalStatus:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.middleName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.nameType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.nationality:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationChildRelationship.relationshipType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.identificationId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.identificationType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.issuingAuthority:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.issuingDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationIdentification.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationParentRelationship.relationshipType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.organizationType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.nameType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.tradingName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.otherName.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.@baseType:
+        condition: ""
+        comment: ""
+      ? productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.@schemaLocation
+      : condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.id:
+        condition: M
+        comment: ""
+      ? productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.relationshipType
+      : condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyCharacteristic.valueType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.partyRoleSpecification.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.paymentMethod.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.placeOfBirth:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.preferredGivenName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.relatedParty:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.role:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.comment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.evaluatedLevel:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.skillCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.skillName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.skill.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.status:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.statusReason:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.certificateNumber:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.issuingJurisdiction:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.reason:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.jurisdictionLevel:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.jurisdictionName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.taxType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.taxExemptionCertificate.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.title:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.tradingName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.partyOrPartyRole.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.relatedParty.role:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.role:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.siteRelationship.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.stateOrProvince:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.status:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetNr:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetNrLast:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetNrLastSuffix:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetNrSuffix:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetSuffix:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.place.streetType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.place.role:
+        condition: M
+        comment: ""
+      productOrderItem.product.product:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic:
+        condition: ""
+        comment: Capability to provide characteristic valued is mandatory if Characteristic defined in catalog for this productSpec and targetProductSchema no provided
+      productOrderItem.product.productCharacteristic.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productCharacteristic.characteristicRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic.characteristicRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic.characteristicRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic.characteristicRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productCharacteristic.characteristicRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.productCharacteristic.characteristicRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.productCharacteristic.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productCharacteristic.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.productCharacteristic.valueType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOffering:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOffering.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOffering.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOffering.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOffering.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productOffering.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.productOffering.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.productOffering.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOffering.version:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productOrderItem.orderHref:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem.orderId:
+        condition: M
+        comment: ""
+      productOrderItem.product.productOrderItem.orderItemAction:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productOrderItem.orderItemId:
+        condition: M
+        comment: ""
+      productOrderItem.product.productOrderItem.role:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.price.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.percentage:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.price.taxRate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.applicationDuration:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.dutyFreeAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.dutyFreeAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.dutyFreeAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.percentage:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.taxIncludedAmount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.taxIncludedAmount.unit:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.taxIncludedAmount.value:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.price.taxRate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.priceType:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.priority:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceAlteration.unitOfMeasure:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.priceType:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.productOfferingPrice.version:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.recurringChargePeriod:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productPrice.unitOfMeasure:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productRelationship.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productRelationship.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.productRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.productRelationship.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.productSerialNumber:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productSpecification.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.productSpecification.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.productSpecification.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification.targetProductSchema:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productSpecification.targetProductSchema.@schemaLocation:
+        condition: M
+        comment: ""
+      productOrderItem.product.productSpecification.targetProductSchema.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productSpecification.version:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.productTerm.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.duration:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.duration.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.duration.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.productTerm.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingResource:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingResource.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingResource.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingResource.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingResource.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.realizingResource.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.realizingResource.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.realizingResource.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingService:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingService.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingService.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingService.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.realizingService.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.realizingService.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.realizingService.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.realizingService.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.account.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.agreement.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.aristocraticTitle:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.birthDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.characteristicRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.characteristic.valueType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.contactType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.preferred:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.contactMedium.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.countryOfBirth:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.creditProfileDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.creditRiskRating:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.creditScore:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditProfile.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.creditAgencyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.creditAgencyType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.ratingReference:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.ratingScore:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.creditRating.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.deathDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.disability:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.disability.disabilityCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.disability.disabilityName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.disability.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.disability.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.disability.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.engagedParty.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.existsDuring:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.existsDuring.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.existsDuring.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference.externalIdentifierType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.externalReference.owner:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.familyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.familyNamePrefix:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.formattedName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.gender:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.generation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.givenName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.identificationId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.identificationType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.issuingAuthority:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.issuingDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.individualIdentification.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.isHeadOffice:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.isLegalEntity:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.isFavouriteLanguage:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.languageCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.languageName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.listeningProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.readingProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.speakingProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.languageAbility.writingProficiency:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.legalName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.location:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.maritalStatus:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.middleName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.nameType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.nationality:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.organization.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationChildRelationship.relationshipType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.identificationId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.identificationType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.issuingAuthority:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.issuingDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationIdentification.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.organization.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationParentRelationship.relationshipType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.organizationType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.nameType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.tradingName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.otherName.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.characteristicRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.name:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyCharacteristic.valueType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyId:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.partyRoleSpecification.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.paymentMethod.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.placeOfBirth:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.preferredGivenName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.relatedParty:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.role:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.comment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.evaluatedLevel:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.skillCode:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.skillName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.skill.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.status:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.statusReason:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.attachmentType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.content:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.description:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.id:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.mimeType:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.size:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.size.amount:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.size.units:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.url:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.attachment.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.certificateNumber:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.issuingJurisdiction:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.reason:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.@type:
+        condition: M
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.id:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.jurisdictionLevel:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.jurisdictionName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.name:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.taxType:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.taxDefinition.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.taxExemptionCertificate.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.title:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.tradingName:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.validFor:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.partyOrPartyRole.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      productOrderItem.product.relatedParty.role:
+        condition: M
+        comment: ""
+      productOrderItem.product.startDate:
+        condition: ""
+        comment: ""
+      productOrderItem.product.status:
+        condition: ""
+        comment: ""
+      productOrderItem.product.terminationDate:
+        condition: ""
+        comment: ""
+      productOrderItem.productOffering:
+        condition: ""
+        comment: ""
+      productOrderItem.productOffering.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.productOffering.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.productOffering.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.productOffering.@type:
+        condition: M
+        comment: ""
+      productOrderItem.productOffering.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.productOffering.id:
+        condition: M
+        comment: ""
+      productOrderItem.productOffering.name:
+        condition: ""
+        comment: ""
+      productOrderItem.productOffering.version:
+        condition: ""
+        comment: ""
+      productOrderItem.productOfferingQualificationItem:
+        condition: ""
+        comment: Product Offering Qualification Item used to qualified previously this product order item
+      productOrderItem.productOfferingQualificationItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.@type:
+        condition: M
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.itemId:
+        condition: M
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.productOfferingQualificationHref:
+        condition: ""
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.productOfferingQualificationId:
+        condition: M
+        comment: ""
+      productOrderItem.productOfferingQualificationItem.productOfferingQualificationName:
+        condition: ""
+        comment: ""
+      productOrderItem.productOrderItem:
+        condition: ""
+        comment: ""
+      productOrderItem.productOrderItemRelationship:
+        condition: ""
+        comment: ""
+      productOrderItem.productOrderItemRelationship.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.productOrderItemRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.productOrderItemRelationship.@type:
+        condition: M
+        comment: ""
+      productOrderItem.productOrderItemRelationship.id:
+        condition: M
+        comment: ""
+      productOrderItem.productOrderItemRelationship.relationshipType:
+        condition: M
+        comment: ""
+      productOrderItem.qualification:
+        condition: ""
+        comment: ""
+      productOrderItem.qualification.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.qualification.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.qualification.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.qualification.@type:
+        condition: M
+        comment: ""
+      productOrderItem.qualification.href:
+        condition: M (in response messages)
+        comment: ""
+      productOrderItem.qualification.id:
+        condition: M
+        comment: ""
+      productOrderItem.qualification.name:
+        condition: ""
+        comment: ""
+      productOrderItem.quantity:
+        condition: ""
+        comment: ""
+      productOrderItem.quoteItem:
+        condition: ""
+        comment: Quote Item used to price previously this product order item
+      productOrderItem.quoteItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderItem.quoteItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderItem.quoteItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderItem.quoteItem.@type:
+        condition: M
+        comment: ""
+      productOrderItem.quoteItem.quoteHref:
+        condition: ""
+        comment: ""
+      productOrderItem.quoteItem.quoteId:
+        condition: M
+        comment: ""
+      productOrderItem.quoteItem.quoteItemId:
+        condition: M
+        comment: ""
+      productOrderItem.state:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.@baseType:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.@type:
+        condition: M
+        comment: ""
+      productOrderJeopardyAlert.alertDate:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.exception:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.id:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.jeopardyType:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.message:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.name:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.@type:
+        condition: M
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.ProductOrderHref:
+        condition: ""
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.productOrderId:
+        condition: M
+        comment: ""
+      productOrderJeopardyAlert.productOrderItem.productOrderItemId:
+        condition: M
+        comment: ""
+      productOrderMilestone:
+        condition: ""
+        comment: ""
+      productOrderMilestone.@baseType:
+        condition: ""
+        comment: ""
+      productOrderMilestone.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderMilestone.@type:
+        condition: M
+        comment: ""
+      productOrderMilestone.description:
+        condition: ""
+        comment: ""
+      productOrderMilestone.id:
+        condition: ""
+        comment: ""
+      productOrderMilestone.message:
+        condition: ""
+        comment: ""
+      productOrderMilestone.milestoneDate:
+        condition: ""
+        comment: ""
+      productOrderMilestone.name:
+        condition: ""
+        comment: ""
+      productOrderMilestone.productOrderItem:
+        condition: ""
+        comment: ""
+      productOrderMilestone.productOrderItem.@baseType:
+        condition: ""
+        comment: ""
+      productOrderMilestone.productOrderItem.@referredType:
+        condition: ""
+        comment: ""
+      productOrderMilestone.productOrderItem.@schemaLocation:
+        condition: ""
+        comment: ""
+      productOrderMilestone.productOrderItem.@type:
+        condition: M
+        comment: ""
+      productOrderMilestone.productOrderItem.ProductOrderHref:
+        condition: ""
+        comment: ""
+      productOrderMilestone.productOrderItem.productOrderId:
+        condition: M
+        comment: ""
+      productOrderMilestone.productOrderItem.productOrderItemId:
+        condition: M
+        comment: ""
+      productOrderMilestone.status:
+        condition: ""
+        comment: ""
+      quote:
+        condition: ""
+        comment: ""
+      quote.@baseType:
+        condition: ""
+        comment: ""
+      quote.@referredType:
+        condition: ""
+        comment: ""
+      quote.@schemaLocation:
+        condition: ""
+        comment: ""
+      quote.@type:
+        condition: M
+        comment: ""
+      quote.href:
+        condition: M (in response messages)
+        comment: ""
+      quote.id:
+        condition: M
+        comment: ""
+      quote.name:
+        condition: ""
+        comment: ""
+      relatedParty:
+        condition: ""
+        comment: RelatedParty are mandatory to at least specify customer except specific change U
+      relatedParty.@baseType:
+        condition: ""
+        comment: ""
+      relatedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      relatedParty.@type:
+        condition: M
+        comment: ""
+      relatedParty.partyOrPartyRole:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@baseType:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@referredType:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@schemaLocation:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@type:
+        condition: M
+        comment: ""
+      relatedParty.partyOrPartyRole.href:
+        condition: M (in response messages)
+        comment: ""
+      relatedParty.partyOrPartyRole.id:
+        condition: M
+        comment: ""
+      relatedParty.partyOrPartyRole.name:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.partyId:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.partyName:
+        condition: ""
+        comment: ""
+      relatedParty.role:
+        condition: M
+        comment: ""
+      requestedCompletionDate:
+        condition: ""
+        comment: ""
+      requestedInitialState:
+        condition: ""
+        comment: ""
+      requestedStartDate:
+        condition: ""
+        comment: ""
+      state:
+        condition: M (in response messages)
+        comment: ""
+    operations-details:
+      POST:
+        mandatory:
+          '@type':
+            rule: ""
+          productOrderItem:
+            rule: ""
+          productOrderItem.@type:
+            rule: ""
+          productOrderItem.action:
+            rule: ""
+          productOrderItem.id:
+            rule: ""
+      PATCH:
+        patchable:
+          agreement:
+            rule: ""
+          billingAccount:
+            rule: ""
+          cancellationDate:
+            rule: ""
+          cancellationReason:
+            rule: ""
+          category:
+            rule: ""
+          channel:
+            rule: ""
+          completionDate:
+            rule: ""
+          description:
+            rule: ""
+          expectedCompletionDate:
+            rule: ""
+          externalId:
+            rule: ""
+          note:
+            rule: ""
+          notificationContact:
+            rule: ""
+          orderRelationship:
+            rule: ""
+          orderTotalPrice:
+            rule: ""
+          payment:
+            rule: ""
+          priority:
+            rule: ""
+          productOfferingQualification:
+            rule: ""
+          productOrderErrorMessage:
+            rule: ""
+          productOrderItem:
+            rule: ""
+          productOrderJeopardyAlert:
+            rule: ""
+          productOrderMilestone:
+            rule: ""
+          quote:
+            rule: ""
+          relatedParty:
+            rule: ""
+          requestedCompletionDate:
+            rule: ""
+          requestedStartDate:
+            rule: ""
+          state:
+            rule: ""
+        non-patchable:
+          '@baseType':
+            rule: ""
+          '@schemaLocation':
+            rule: ""
+          '@type':
+            rule: ""
+          creationDate:
+            rule: ""
+          href:
+            rule: ""
+          id:
+            rule: ""
+          requestedInitialState:
+            rule: ""
+
+  ProductOrderAttributeValueChangeEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderCreateEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderDeleteEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderErrorMessageEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderInformationRequiredEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderJeopardyAlertEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderMilestoneEvent:
+    condition: ""
+    comment: ""
+
+  ProductOrderStateChangeEvent:
+    condition: ""
+    comment: ""
