@@ -22,9 +22,6 @@ conformance:
       query:
         comment: ''
         condition: ''
-      topicRef:
-        comment: ''
-        condition: M (in response messages)
     comment: ''
     condition: ''
     operations:
@@ -97,9 +94,6 @@ conformance:
       attachment.size.units:
         comment: ''
         condition: ''
-      attachment.topicRef:
-        comment: ''
-        condition: ''
       attachment.url:
         comment: ''
         condition: ''
@@ -134,9 +128,6 @@ conformance:
         comment: ''
         condition: M
       channel.name:
-        comment: ''
-        condition: ''
-      channel.topicRef:
         comment: ''
         condition: ''
       creationDate:
@@ -244,9 +235,6 @@ conformance:
       relatedEntity.entity.name:
         comment: ''
         condition: ''
-      relatedEntity.entity.topicRef:
-        comment: ''
-        condition: ''
       relatedEntity.role:
         comment: ''
         condition: M
@@ -290,9 +278,6 @@ conformance:
         comment: ''
         condition: ''
       relatedParty.partyOrPartyRole.partyName:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.topicRef:
         comment: ''
         condition: ''
       relatedParty.role:
@@ -340,9 +325,6 @@ conformance:
       ticketType:
         comment: ''
         condition: M
-      topicRef:
-        comment: ''
-        condition: M (in response messages)
       troubleTicketCharacteristic:
         comment: ''
         condition: ''
@@ -409,9 +391,6 @@ conformance:
       troubleTicketRelationship.relationshipType:
         comment: ''
         condition: M
-      troubleTicketRelationship.topicRef:
-        comment: ''
-        condition: ''
       troubleTicketSpecification:
         comment: ''
         condition: ''
@@ -434,9 +413,6 @@ conformance:
         comment: ''
         condition: M
       troubleTicketSpecification.name:
-        comment: ''
-        condition: ''
-      troubleTicketSpecification.topicRef:
         comment: ''
         condition: ''
       troubleTicketSpecification.version:
@@ -618,9 +594,6 @@ conformance:
       relatedParty.partyOrPartyRole.partyName:
         comment: ''
         condition: ''
-      relatedParty.partyOrPartyRole.topicRef:
-        comment: ''
-        condition: ''
       relatedParty.role:
         comment: ''
         condition: M
@@ -756,9 +729,6 @@ conformance:
       specCharacteristic.valueType:
         comment: ''
         condition: M
-      topicRef:
-        comment: ''
-        condition: M (in response messages)
       validFor:
         comment: ''
         condition: ''
