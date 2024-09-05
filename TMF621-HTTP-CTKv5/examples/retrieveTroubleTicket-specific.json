@@ -1,7 +1,7 @@
 {
     "name": "GET /trouhbleTicket/{id}",
     "http-request": {
-        "path": "/troubleTicket/9c0c3601-d518-4be8-9d44-67756f7d7dde",
+        "path": "/troubleTicket/ef6d4d74-f0d5-4a37-94b8-41136ab7cf34",
         "method": "GET"
     },
     "http-response": {

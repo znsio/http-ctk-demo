@@ -23,6 +23,9 @@ report:
     - type: html
       title: CTK Results
       heading: CTK Results
+      lite: true
+      logo: "/Users/joelrosario/Source/tmforum/async-app/ctk-generator/assets/report/img/tmf-logo.svg"
+      logoAltText: "TMForum"
   types:
     APICoverage:
       OpenAPI:

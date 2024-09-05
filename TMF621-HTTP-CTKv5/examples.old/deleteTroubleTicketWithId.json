@@ -1,5 +1,4 @@
 {
-  "name": "DELETE /trouhbleTicket/{id}",
   "http-request": {
     "path": "/troubleTicket/(id:string)",
     "method": "DELETE"

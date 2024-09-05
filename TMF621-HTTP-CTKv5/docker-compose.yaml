@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ctk:
-    image: znsio/specmatic:2.0.17
+    image: znsio/specmatic:2.0.18
     environment:
       MAX_TEST_REQUEST_COMBINATIONS: 5
       EXTENSIBLE_SCHEMA: 'true'
@@ -10,6 +10,7 @@ services:
       - './SEND_ME:/usr/src/app/build/reports/specmatic/html:rw'
       - './specmatic.yaml:/usr/src/app/specmatic.yaml'
       - './examples:/usr/src/app/examples'
+      - './TroubleTicket-updated.yaml:/usr/src/app/TroubleTicket-updated.yaml'
     command: >
       test
       --examples '/usr/src/app/examples'

@@ -1,4 +1,5 @@
 {
+    "name": "GET /trouhbleTicket/9c0c3601-d518-4be8-9d44-67756f7d7dde?fields=description",
     "http-request": {
         "path": "/troubleTicket/9c0c3601-d518-4be8-9d44-67756f7d7dde",
         "method": "GET",
@@ -11,7 +12,8 @@
         "body": {
             "description": "I do not accept the last VOD charge, since the movie was constantly interrupted, I had to quick watching the movie in the middle ",
             "@type": "TroubleTicket",
-            "id": "ef6d4d74-f0d5-4a37-94b8-41136ab7cf34"
+            "id": "ef6d4d74-f0d5-4a37-94b8-41136ab7cf34",
+            "href": "http://url"
         }
     }
 }
