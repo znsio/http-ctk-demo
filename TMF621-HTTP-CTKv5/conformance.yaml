@@ -1,826 +1,841 @@
 conformance:
+
+  resources:
+   - TroubleTicketSpecification
+   - TroubleTicket
+   - Hub
+
+  notifications:
+   - TroubleTicketAttributeValueChangeEvent
+   - TroubleTicketSpecificationCreateEvent
+   - TroubleTicketSpecificationDeleteEvent
+   - TroubleTicketSpecificationStatusChangeEvent
+   - TroubleTicketResolvedEvent
+   - TroubleTicketDeleteEvent
+   - TroubleTicketInformationRequiredEvent
+   - TroubleTicketSpecificationAttributeValueChangeEvent
+   - TroubleTicketCreateEvent
+   - TroubleTicketStatusChangeEvent
+
   Hub:
+    condition: ""
+    comment: ""
+    operations:
+      POST:
+        condition: ""
+        comment: ""
+      DELETE:
+        condition: ""
+        comment: ""
     attributes:
       '@baseType':
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       '@schemaLocation':
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       '@type':
-        comment: ''
         condition: M
+        comment: ""
       callback:
-        comment: ''
         condition: M
+        comment: ""
       href:
-        comment: ''
-        condition: ''
-      id:
-        comment: ''
         condition: M (in response messages)
+        comment: ""
+      id:
+        condition: M (in response messages)
+        comment: ""
       query:
-        comment: ''
-        condition: ''
-    comment: ''
-    condition: ''
-    operations:
-      DELETE:
-        comment: ''
-        condition: ''
-      POST:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
     operations-details:
       POST:
         mandatory:
           '@type':
-            rule: ''
+            rule: ""
           callback:
-            rule: ''
+            rule: ""
+
   TroubleTicket:
+    condition: M
+    comment: ""
+    operations:
+      GET:
+        condition: M
+        comment: ""
+      POST:
+        condition: M
+        comment: ""
+      PATCH:
+        condition: ""
+        comment: ""
+      DELETE:
+        condition: M
+        comment: ""
     attributes:
       '@baseType':
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       '@schemaLocation':
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       '@type':
-        comment: ''
         condition: M
+        comment: ""
       attachment:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.@referredType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.@type:
-        comment: ''
         condition: M
+        comment: ""
       attachment.attachmentType:
-        comment: ''
         condition: M
+        comment: ""
       attachment.content:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.description:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.href:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.id:
-        comment: ''
         condition: M
+        comment: ""
       attachment.mimeType:
-        comment: ''
         condition: M
+        comment: ""
       attachment.name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.size:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.size.amount:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.size.units:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.url:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.validFor:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.validFor.endDateTime:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       attachment.validFor.startDateTime:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       channel:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       channel.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       channel.@referredType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       channel.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       channel.@type:
-        comment: ''
         condition: M
+        comment: ""
       channel.href:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       channel.id:
-        comment: ''
         condition: M
+        comment: ""
       channel.name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       creationDate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       description:
-        comment: ''
         condition: M
+        comment: ""
       expectedResolutionDate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       externalIdentifier:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       externalIdentifier.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       externalIdentifier.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       externalIdentifier.@type:
-        comment: ''
         condition: M
+        comment: ""
       externalIdentifier.externalIdentifierType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       externalIdentifier.id:
-        comment: ''
         condition: M
+        comment: ""
       externalIdentifier.owner:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       href:
-        comment: ''
-        condition: ''
+        condition: M (in response messages)
+        comment: ""
       id:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       lastUpdate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note.@type:
-        comment: ''
         condition: M
+        comment: ""
       note.author:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note.date:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note.id:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       note.text:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       priority:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.@type:
-        comment: ''
         condition: M
+        comment: ""
       relatedEntity.entity:
-        comment: ''
         condition: M
+        comment: ""
       relatedEntity.entity.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.entity.@referredType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.entity.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.entity.@type:
-        comment: ''
         condition: M
+        comment: ""
       relatedEntity.entity.href:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.entity.id:
-        comment: ''
         condition: M
+        comment: ""
       relatedEntity.entity.name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedEntity.role:
-        comment: ''
         condition: M
+        comment: ""
       relatedParty:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.@type:
-        comment: ''
         condition: M
+        comment: ""
       relatedParty.partyOrPartyRole:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.@referredType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.@type:
-        comment: ''
         condition: M
+        comment: ""
       relatedParty.partyOrPartyRole.href:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.id:
-        comment: ''
         condition: M
+        comment: ""
       relatedParty.partyOrPartyRole.name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.partyId:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.partyOrPartyRole.partyName:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       relatedParty.role:
-        comment: ''
         condition: M
+        comment: ""
       requestedResolutionDate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       resolutionDate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       severity:
-        comment: ''
         condition: M
+        comment: ""
       status:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeDate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeHistory:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeHistory.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeHistory.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeHistory.@type:
-        comment: ''
         condition: M
+        comment: ""
       statusChangeHistory.status:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeHistory.statusChangeDate:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeHistory.statusChangeReason:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       statusChangeReason:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       ticketType:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketCharacteristic:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.@type:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketCharacteristic.characteristicRelationship:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.characteristicRelationship.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.characteristicRelationship.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.characteristicRelationship.@type:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketCharacteristic.characteristicRelationship.id:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketCharacteristic.characteristicRelationship.relationshipType:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketCharacteristic.id:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketCharacteristic.name:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketCharacteristic.valueType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship.@referredType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship.@type:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketRelationship.href:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship.id:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketRelationship.name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketRelationship.relationshipType:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketSpecification:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketSpecification.@baseType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketSpecification.@referredType:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketSpecification.@schemaLocation:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketSpecification.@type:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketSpecification.href:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketSpecification.id:
-        comment: ''
         condition: M
+        comment: ""
       troubleTicketSpecification.name:
-        comment: ''
-        condition: ''
+        condition: ""
+        comment: ""
       troubleTicketSpecification.version:
-        comment: ''
-        condition: ''
-    comment: ''
-    condition: M
-    operations:
-      DELETE:
-        comment: ''
-        condition: M
-      GET:
-        comment: ''
-        condition: M
-      PATCH:
-        comment: ''
-        condition: ''
-      POST:
-        comment: ''
-        condition: M
+        condition: ""
+        comment: ""
     operations-details:
-      PATCH:
-        non-patchable:
-          '@baseType':
-            rule: ''
-          '@schemaLocation':
-            rule: ''
+      POST:
+        mandatory:
           '@type':
-            rule: ''
-          creationDate:
-            rule: ''
-          href:
-            rule: ''
-          id:
-            rule: ''
-          lastUpdate:
-            rule: ''
-          statusChange:
-            rule: ''
-          statusChangeDate:
-            rule: ''
+            rule: ""
+          description:
+            rule: ""
+          severity:
+            rule: ""
+          ticketType:
+            rule: ""
+      PATCH:
         patchable:
           attachment:
-            rule: ''
+            rule: ""
           channel:
-            rule: ''
+            rule: ""
           description:
-            rule: ''
+            rule: ""
           expectedResolutionDate:
-            rule: ''
+            rule: ""
           externalIdentifier:
-            rule: ''
+            rule: ""
           name:
-            rule: ''
+            rule: ""
           note:
-            rule: ''
+            rule: ""
           priority:
-            rule: ''
+            rule: ""
           relatedEntity:
-            rule: ''
+            rule: ""
           relatedParty:
-            rule: ''
+            rule: ""
           requestedResolutionDate:
-            rule: ''
+            rule: ""
           resolutionDate:
-            rule: ''
+            rule: ""
           severity:
-            rule: ''
+            rule: ""
           status:
-            rule: ''
+            rule: ""
           statusChangeHistory:
-            rule: ''
+            rule: ""
           statusChangeReason:
-            rule: ''
+            rule: ""
           ticketType:
-            rule: ''
+            rule: ""
           troubleTicketCharacteristic:
-            rule: ''
+            rule: ""
           troubleTicketRelationship:
-            rule: ''
+            rule: ""
           troubleTicketSpecification:
-            rule: ''
-      POST:
-        mandatory:
-          '@type':
-            rule: ''
-          description:
-            rule: ''
-          severity:
-            rule: ''
-          ticketType:
-            rule: ''
-  TroubleTicketAttributeValueChangeEvent:
-    comment: ''
-    condition: ''
-  TroubleTicketCreateEvent:
-    comment: ''
-    condition: ''
-  TroubleTicketDeleteEvent:
-    comment: ''
-    condition: ''
-  TroubleTicketInformationRequiredEvent:
-    comment: ''
-    condition: ''
-  TroubleTicketResolvedEvent:
-    comment: ''
-    condition: ''
-  TroubleTicketSpecification:
-    attributes:
-      '@baseType':
-        comment: ''
-        condition: ''
-      '@schemaLocation':
-        comment: ''
-        condition: ''
-      '@type':
-        comment: ''
-        condition: M
-      creationDate:
-        comment: ''
-        condition: ''
-      description:
-        comment: ''
-        condition: ''
-      href:
-        comment: ''
-        condition: ''
-      id:
-        comment: ''
-        condition: ''
-      lastUpdate:
-        comment: ''
-        condition: ''
-      lifecycleStatus:
-        comment: ''
-        condition: ''
-      name:
-        comment: ''
-        condition: M
-      relatedParty:
-        comment: ''
-        condition: ''
-      relatedParty.@baseType:
-        comment: ''
-        condition: ''
-      relatedParty.@schemaLocation:
-        comment: ''
-        condition: ''
-      relatedParty.@type:
-        comment: ''
-        condition: M
-      relatedParty.partyOrPartyRole:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.@baseType:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.@referredType:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.@schemaLocation:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.@type:
-        comment: ''
-        condition: M
-      relatedParty.partyOrPartyRole.href:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.id:
-        comment: ''
-        condition: M
-      relatedParty.partyOrPartyRole.name:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.partyId:
-        comment: ''
-        condition: ''
-      relatedParty.partyOrPartyRole.partyName:
-        comment: ''
-        condition: ''
-      relatedParty.role:
-        comment: ''
-        condition: M
-      specCharacteristic:
-        comment: ''
-        condition: ''
-      specCharacteristic.@baseType:
-        comment: ''
-        condition: ''
-      specCharacteristic.@schemaLocation:
-        comment: ''
-        condition: ''
-      specCharacteristic.@type:
-        comment: ''
-        condition: M
-      specCharacteristic.@valueSchemaLocation:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.@baseType:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.@schemaLocation:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.@type:
-        comment: ''
-        condition: M
-      specCharacteristic.charSpecRelationship.characteristicSpecificationId:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.name:
-        comment: ''
-        condition: M
-      specCharacteristic.charSpecRelationship.parentSpecificationHref:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.parentSpecificationId:
-        comment: ''
-        condition: M
-      specCharacteristic.charSpecRelationship.relationshipType:
-        comment: ''
-        condition: M
-      specCharacteristic.charSpecRelationship.validFor:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.validFor.endDateTime:
-        comment: ''
-        condition: ''
-      specCharacteristic.charSpecRelationship.validFor.startDateTime:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.@baseType:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.@schemaLocation:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.@type:
-        comment: ''
-        condition: M
-      specCharacteristic.characteristicValueSpecification.isDefault:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.rangeInterval:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.regex:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.unitOfMeasure:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.validFor:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.validFor.endDateTime:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.validFor.startDateTime:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.valueFrom:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.valueTo:
-        comment: ''
-        condition: ''
-      specCharacteristic.characteristicValueSpecification.valueType:
-        comment: ''
-        condition: ''
-      specCharacteristic.configurable:
-        comment: ''
-        condition: ''
-      specCharacteristic.description:
-        comment: ''
-        condition: ''
-      specCharacteristic.extensible:
-        comment: ''
-        condition: ''
-      specCharacteristic.id:
-        comment: ''
-        condition: ''
-      specCharacteristic.isUnique:
-        comment: ''
-        condition: ''
-      specCharacteristic.maxCardinality:
-        comment: ''
-        condition: ''
-      specCharacteristic.minCardinality:
-        comment: ''
-        condition: ''
-      specCharacteristic.name:
-        comment: ''
-        condition: M
-      specCharacteristic.regex:
-        comment: ''
-        condition: ''
-      specCharacteristic.validFor:
-        comment: ''
-        condition: ''
-      specCharacteristic.validFor.endDateTime:
-        comment: ''
-        condition: ''
-      specCharacteristic.validFor.startDateTime:
-        comment: ''
-        condition: ''
-      specCharacteristic.valueType:
-        comment: ''
-        condition: M
-      validFor:
-        comment: ''
-        condition: ''
-      validFor.endDateTime:
-        comment: ''
-        condition: ''
-      validFor.startDateTime:
-        comment: ''
-        condition: ''
-      version:
-        comment: ''
-        condition: ''
-    comment: ''
-    condition: ''
-    operations:
-      DELETE:
-        comment: ''
-        condition: ''
-      GET:
-        comment: ''
-        condition: ''
-      PATCH:
-        comment: ''
-        condition: ''
-      POST:
-        comment: ''
-        condition: ''
-    operations-details:
-      PATCH:
+            rule: ""
         non-patchable:
           '@baseType':
-            rule: ''
+            rule: ""
           '@schemaLocation':
-            rule: ''
+            rule: ""
           '@type':
-            rule: ''
+            rule: ""
           creationDate:
-            rule: ''
+            rule: ""
           href:
-            rule: ''
+            rule: ""
           id:
-            rule: ''
+            rule: ""
           lastUpdate:
-            rule: ''
-        patchable:
-          description:
-            rule: ''
-          lifecycleStatus:
-            rule: ''
-          name:
-            rule: ''
-          relatedParty:
-            rule: ''
-          specCharacteristic:
-            rule: ''
-          validFor:
-            rule: ''
-          version:
-            rule: ''
+            rule: ""
+          statusChange:
+            rule: ""
+          statusChangeDate:
+            rule: ""
+
+  TroubleTicketAttributeValueChangeEvent:
+    condition: ""
+    comment: ""
+
+  TroubleTicketCreateEvent:
+    condition: ""
+    comment: ""
+
+  TroubleTicketDeleteEvent:
+    condition: ""
+    comment: ""
+
+  TroubleTicketInformationRequiredEvent:
+    condition: ""
+    comment: ""
+
+  TroubleTicketResolvedEvent:
+    condition: ""
+    comment: ""
+
+  TroubleTicketSpecification:
+    condition: ""
+    comment: ""
+    operations:
+      GET:
+        condition: ""
+        comment: ""
+      POST:
+        condition: ""
+        comment: ""
+      PATCH:
+        condition: ""
+        comment: ""
+      DELETE:
+        condition: ""
+        comment: ""
+    attributes:
+      '@baseType':
+        condition: ""
+        comment: ""
+      '@schemaLocation':
+        condition: ""
+        comment: ""
+      '@type':
+        condition: M
+        comment: ""
+      creationDate:
+        condition: ""
+        comment: ""
+      description:
+        condition: ""
+        comment: ""
+      href:
+        condition: M (in response messages)
+        comment: ""
+      id:
+        condition: ""
+        comment: ""
+      lastUpdate:
+        condition: ""
+        comment: ""
+      lifecycleStatus:
+        condition: ""
+        comment: ""
+      name:
+        condition: M
+        comment: ""
+      relatedParty:
+        condition: ""
+        comment: ""
+      relatedParty.@baseType:
+        condition: ""
+        comment: ""
+      relatedParty.@schemaLocation:
+        condition: ""
+        comment: ""
+      relatedParty.@type:
+        condition: M
+        comment: ""
+      relatedParty.partyOrPartyRole:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@baseType:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@referredType:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@schemaLocation:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.@type:
+        condition: M
+        comment: ""
+      relatedParty.partyOrPartyRole.href:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.id:
+        condition: M
+        comment: ""
+      relatedParty.partyOrPartyRole.name:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.partyId:
+        condition: ""
+        comment: ""
+      relatedParty.partyOrPartyRole.partyName:
+        condition: ""
+        comment: ""
+      relatedParty.role:
+        condition: M
+        comment: ""
+      specCharacteristic:
+        condition: ""
+        comment: ""
+      specCharacteristic.@baseType:
+        condition: ""
+        comment: ""
+      specCharacteristic.@schemaLocation:
+        condition: ""
+        comment: ""
+      specCharacteristic.@type:
+        condition: M
+        comment: ""
+      specCharacteristic.@valueSchemaLocation:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.@baseType:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.@schemaLocation:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.@type:
+        condition: M
+        comment: ""
+      specCharacteristic.charSpecRelationship.characteristicSpecificationId:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.name:
+        condition: M
+        comment: ""
+      specCharacteristic.charSpecRelationship.parentSpecificationHref:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.parentSpecificationId:
+        condition: M
+        comment: ""
+      specCharacteristic.charSpecRelationship.relationshipType:
+        condition: M
+        comment: ""
+      specCharacteristic.charSpecRelationship.validFor:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      specCharacteristic.charSpecRelationship.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.@baseType:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.@schemaLocation:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.@type:
+        condition: M
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.isDefault:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.rangeInterval:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.regex:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.unitOfMeasure:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.validFor:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.valueFrom:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.valueTo:
+        condition: ""
+        comment: ""
+      specCharacteristic.characteristicValueSpecification.valueType:
+        condition: ""
+        comment: ""
+      specCharacteristic.configurable:
+        condition: ""
+        comment: ""
+      specCharacteristic.description:
+        condition: ""
+        comment: ""
+      specCharacteristic.extensible:
+        condition: ""
+        comment: ""
+      specCharacteristic.id:
+        condition: ""
+        comment: ""
+      specCharacteristic.isUnique:
+        condition: ""
+        comment: ""
+      specCharacteristic.maxCardinality:
+        condition: ""
+        comment: ""
+      specCharacteristic.minCardinality:
+        condition: ""
+        comment: ""
+      specCharacteristic.name:
+        condition: M
+        comment: ""
+      specCharacteristic.regex:
+        condition: ""
+        comment: ""
+      specCharacteristic.validFor:
+        condition: ""
+        comment: ""
+      specCharacteristic.validFor.endDateTime:
+        condition: ""
+        comment: ""
+      specCharacteristic.validFor.startDateTime:
+        condition: ""
+        comment: ""
+      specCharacteristic.valueType:
+        condition: M
+        comment: ""
+      validFor:
+        condition: ""
+        comment: ""
+      validFor.endDateTime:
+        condition: ""
+        comment: ""
+      validFor.startDateTime:
+        condition: ""
+        comment: ""
+      version:
+        condition: ""
+        comment: ""
+    operations-details:
       POST:
         mandatory:
           '@type':
-            rule: ''
+            rule: ""
           name:
-            rule: ''
+            rule: ""
+      PATCH:
+        patchable:
+          description:
+            rule: ""
+          lifecycleStatus:
+            rule: ""
+          name:
+            rule: ""
+          relatedParty:
+            rule: ""
+          specCharacteristic:
+            rule: ""
+          validFor:
+            rule: ""
+          version:
+            rule: ""
+        non-patchable:
+          '@baseType':
+            rule: ""
+          '@schemaLocation':
+            rule: ""
+          '@type':
+            rule: ""
+          creationDate:
+            rule: ""
+          href:
+            rule: ""
+          id:
+            rule: ""
+          lastUpdate:
+            rule: ""
+
   TroubleTicketSpecificationAttributeValueChangeEvent:
-    comment: ''
-    condition: ''
+    condition: ""
+    comment: ""
+
   TroubleTicketSpecificationCreateEvent:
-    comment: ''
-    condition: ''
+    condition: ""
+    comment: ""
+
   TroubleTicketSpecificationDeleteEvent:
-    comment: ''
-    condition: ''
+    condition: ""
+    comment: ""
+
   TroubleTicketSpecificationStatusChangeEvent:
-    comment: ''
-    condition: ''
+    condition: ""
+    comment: ""
+
   TroubleTicketStatusChangeEvent:
-    comment: ''
-    condition: ''
-  notifications:
-  - TroubleTicketAttributeValueChangeEvent
-  - TroubleTicketSpecificationCreateEvent
-  - TroubleTicketSpecificationDeleteEvent
-  - TroubleTicketSpecificationStatusChangeEvent
-  - TroubleTicketResolvedEvent
-  - TroubleTicketDeleteEvent
-  - TroubleTicketInformationRequiredEvent
-  - TroubleTicketSpecificationAttributeValueChangeEvent
-  - TroubleTicketCreateEvent
-  - TroubleTicketStatusChangeEvent
-  resources:
-  - TroubleTicketSpecification
-  - TroubleTicket
-  - Hub
+    condition: ""
+    comment: ""
