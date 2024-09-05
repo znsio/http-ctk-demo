@@ -11,7 +11,8 @@
         "body": {
             "ticketType": "Bill Dispute",
             "@type": "TroubleTicket",
-            "id": "ef6d4d74-f0d5-4a37-94b8-41136ab7cf34"
+            "id": "ef6d4d74-f0d5-4a37-94b8-41136ab7cf34",
+            "href": "http://url"
         }
     }
 }
