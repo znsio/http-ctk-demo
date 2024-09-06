@@ -1,4 +1,5 @@
 {
+    "name": "GET /troubleTicket",
     "http-request": {
         "path": "/troubleTicket",
         "method": "GET"
