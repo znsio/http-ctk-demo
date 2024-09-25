@@ -7,7 +7,6 @@ services:
     volumes:
       - ./specmatic.yaml:/usr/src/app/specmatic.yaml
       - ./examples:/usr/src/app/examples
-      - ./TroubleTicket-updated.yaml:/usr/src/app/TroubleTicket-updated.yaml
     ports:
       - "9000"
 

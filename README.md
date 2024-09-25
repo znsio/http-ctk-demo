@@ -1,23 +1,16 @@
 # Instructions
 
 ## Pre-requisites
-
-- Build the Specmatic docker image locally
-  - Pull latest from the Specmatic repo
-  - checkout `html-report` branch
-  - run `./gradlew assemble` (some tests related to the report are failing)
-  - run `./build-local-docker-image.sh`
-- Clone https://github.com/znsio/http-ctk-demo/
 - Ensure that you have Docker Desktop running
 
 
-## Run the Dockerized RI (Specmatic stub-based setup)
+## Run the Dockerized RI 
 ```shell
 cd TMF621-HTTP-RIv5
 ./ri.sh
 ```
 
-## Run the CTK
+## Run the Dockerized CTK
 ```shell
 cd TMF621-HTTP-CTKv5
 ./ctk.sh

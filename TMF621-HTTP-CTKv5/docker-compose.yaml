@@ -10,7 +10,6 @@ services:
       - './SEND_ME:/usr/src/app/build/reports/specmatic/html:rw'
       - './specmatic.yaml:/usr/src/app/specmatic.yaml'
       - './examples:/usr/src/app/examples'
-      - './TroubleTicket-updated.yaml:/usr/src/app/TroubleTicket-updated.yaml'
     command: >
       test
       --examples '/usr/src/app/examples'

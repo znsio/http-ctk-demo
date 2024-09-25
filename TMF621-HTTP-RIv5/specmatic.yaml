@@ -1,7 +1,8 @@
 contract_repositories:
-  - type: filesystem
+  - provider: git
+    repository: https://github.com/tmforum-rand/openapi-v5-assets.git
     consumes:
-      - TroubleTicket-updated.yaml
+      - TMF621-v5-OAS.yaml
 
 stub:
   generative: true
