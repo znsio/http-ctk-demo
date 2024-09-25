@@ -1435,8 +1435,8 @@ components:
           CharacteristicValueSpecification: '#/components/schemas/CharacteristicValueSpecification'
           BooleanArrayCharacteristicValueSpecification: '#/components/schemas/BooleanArrayCharacteristicValueSpecification'
           BooleanCharacteristicValueSpecification: '#/components/schemas/BooleanCharacteristicValueSpecification'
-          FloatArrayCharacteristicValueSpecification: '#/components/schemas/FloatArrayCharacteristicValueSpecification'
           FloatCharacteristicValueSpecification: '#/components/schemas/FloatCharacteristicValueSpecification'
+          FloatArrayCharacteristicValueSpecification: '#/components/schemas/FloatArrayCharacteristicValueSpecification'
           IntegerArrayCharacteristicValueSpecification: '#/components/schemas/IntegerArrayCharacteristicValueSpecification'
           IntegerCharacteristicValueSpecification: '#/components/schemas/IntegerCharacteristicValueSpecification'
           MapArrayCharacteristicValueSpecification: '#/components/schemas/MapArrayCharacteristicValueSpecification'
@@ -1503,8 +1503,8 @@ components:
           CharacteristicValueSpecification: '#/components/schemas/CharacteristicValueSpecification_MVO'
           BooleanArrayCharacteristicValueSpecification: '#/components/schemas/BooleanArrayCharacteristicValueSpecification'
           BooleanCharacteristicValueSpecification: '#/components/schemas/BooleanCharacteristicValueSpecification'
-          FloatArrayCharacteristicValueSpecification: '#/components/schemas/FloatArrayCharacteristicValueSpecification'
           FloatCharacteristicValueSpecification: '#/components/schemas/FloatCharacteristicValueSpecification'
+          FloatArrayCharacteristicValueSpecification: '#/components/schemas/FloatArrayCharacteristicValueSpecification'
           IntegerArrayCharacteristicValueSpecification: '#/components/schemas/IntegerArrayCharacteristicValueSpecification_MVO'
           IntegerCharacteristicValueSpecification: '#/components/schemas/IntegerCharacteristicValueSpecification_MVO'
           MapArrayCharacteristicValueSpecification: '#/components/schemas/MapArrayCharacteristicValueSpecification_MVO'
@@ -2469,14 +2469,6 @@ components:
       description: A Party reference
       allOf:
         - $ref: '#/components/schemas/EntityRef'
-        - type: object
-          required:
-            - '@type'
-          properties:
-            '@type':
-              type: string
-              enum:
-                - PartyRef
       discriminator:
         propertyName: '@type'
         mapping:
@@ -2539,8 +2531,6 @@ components:
           description: >-
             Party role reference. A party role represents the part played by a party in a given
             context.
-          required:
-            - '@type'
           properties:
             partyId:
               type: string
@@ -2548,10 +2538,6 @@ components:
             partyName:
               type: string
               description: The name of the engaged party that is linked to the PartyRole object.
-            '@type':
-              type: string
-              enum:
-                - PartyRoleRef
       discriminator:
         propertyName: '@type'
         mapping:
@@ -2910,7 +2896,7 @@ components:
                 Severity values can be for example : Critical, Major, Minor
             ticketType:
               type: string
-              description: 'represent a business type of the trouble ticket e.g. incident, complain, request'
+              description: 'Represent a business type of the trouble ticket e.g. incident, complain, request'
             attachment:
               type: array
               items:
@@ -3466,7 +3452,7 @@ components:
                 Severity values can be for example : Critical, Major, Minor
             ticketType:
               type: string
-              description: 'represent a business type of the trouble ticket e.g. incident, complain, request'
+              description: 'Represent a business type of the trouble ticket e.g. incident, complain, request'
             attachment:
               type: array
               items:
@@ -3571,7 +3557,7 @@ components:
                 Severity values can be for example : Critical, Major, Minor
             ticketType:
               type: string
-              description: 'represent a business type of the trouble ticket e.g. incident, complain, request'
+              description: 'Represent a business type of the trouble ticket e.g. incident, complain, request'
             attachment:
               type: array
               items:
@@ -3751,9 +3737,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/TroubleTicket_FVO'
-          examples:
-            TroubleTicket_create_example:
-              $ref: '#/components/examples/TroubleTicket_create_example_request'
       required: true
     TroubleTicket_MVO:
       description: The TroubleTicket to be patched
@@ -3852,9 +3835,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/TroubleTicketSpecification_FVO'
-          examples:
-            TroubleTicketSpecification_create_example:
-              $ref: '#/components/examples/TroubleTicketSpecification_create_example_request'
       required: true
     TroubleTicketSpecification_MVO:
       description: The TroubleTicketSpecification to be patched
@@ -3937,7 +3917,8 @@ components:
           examples:
             Basic Hub Example Request:
               value:
-                callback: 'https://host/tmf-api/specificAPIName/v5/listener/specificEventListener  '
+                '@type': Hub
+                callback: 'https://host/tmf-api/specificAPIName/v5/listener/specificEventListener'
                 query: data
       required: true
   responses:
@@ -4128,48 +4109,12 @@ components:
           examples:
             TroubleTicket_partialupdate_example_application_json:
               $ref: '#/components/examples/TroubleTicket_partialupdate_example_application_json_response'
-        application/merge-patch+json:
-          schema:
-            $ref: '#/components/schemas/TroubleTicket'
-          examples:
-            TroubleTicket_partialupdate_example_application_merge_json:
-              $ref: >-
-                #/components/examples/TroubleTicket_partialupdate_example_application_merge_json_response
-        application/json-patch+json:
-          schema:
-            oneOf:
-              - $ref: '#/components/schemas/TroubleTicket'
-              - type: array
-                items:
-                  $ref: '#/components/schemas/TroubleTicket'
-              - type: string
-                nullable: true
-          examples:
-            TroubleTicket_partialupdate_example_application_json_patch:
-              $ref: >-
-                #/components/examples/TroubleTicket_partialupdate_example_application_json_patch_response
-        application/json-patch-query+json:
-          schema:
-            oneOf:
-              - $ref: '#/components/schemas/TroubleTicket'
-              - type: array
-                items:
-                  $ref: '#/components/schemas/TroubleTicket'
-              - type: string
-                nullable: true
-          examples:
-            TroubleTicket_partialupdate_example_application_json_patch_query:
-              $ref: >-
-                #/components/examples/TroubleTicket_partialupdate_example_application_json_patch_query_response
     201TroubleTicket:
       description: OK/Created
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/TroubleTicket'
-          examples:
-            TroubleTicket_create_example:
-              $ref: '#/components/examples/TroubleTicket_create_example_response'
     200TroubleTicketSpecificationArray:
       description: Success
       headers:
@@ -4208,48 +4153,12 @@ components:
             TroubleTicketSpecification_partialupdate_application_json:
               $ref: >-
                 #/components/examples/TroubleTicketSpecification_partialupdate_application_json_response
-        application/merge-patch+json:
-          schema:
-            $ref: '#/components/schemas/TroubleTicketSpecification'
-          examples:
-            TroubleTicketSpecification_partialupdate_application_merge_json:
-              $ref: >-
-                #/components/examples/TroubleTicketSpecification_partialupdate_application_merge_json_response
-        application/json-patch+json:
-          schema:
-            oneOf:
-              - $ref: '#/components/schemas/TroubleTicketSpecification'
-              - type: array
-                items:
-                  $ref: '#/components/schemas/TroubleTicketSpecification'
-              - type: string
-                nullable: true
-          examples:
-            TroubleTicketSpecification_partialupdate_application_json_patch:
-              $ref: >-
-                #/components/examples/TroubleTicketSpecification_partialupdate_application_json_patch_response
-        application/json-patch-query+json:
-          schema:
-            oneOf:
-              - $ref: '#/components/schemas/TroubleTicketSpecification'
-              - type: array
-                items:
-                  $ref: '#/components/schemas/TroubleTicketSpecification'
-              - type: string
-                nullable: true
-          examples:
-            TroubleTicketSpecification_partialupdate_application_json_patch_query:
-              $ref: >-
-                #/components/examples/TroubleTicketSpecification_partialupdate_application_json_patch_query_response
     201TroubleTicketSpecification:
       description: OK/Created
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/TroubleTicketSpecification'
-          examples:
-            TroubleTicketSpecification_create_example:
-              $ref: '#/components/examples/TroubleTicketSpecification_create_example_response'
     Error:
       description: Error
       content:
@@ -4305,9 +4214,6 @@ components:
           name: Network latency
           priority: High
           '@type': TroubleTicket
-      description: >-
-        Here's an example of a request for retrieving a list of trouble ticket(s). The given filter
-        criteria is priority High and fields id,href,name,@type,priority
     TroubleTicket_list_example_response:
       value:
         - id: '3256'
@@ -4337,12 +4243,13 @@ components:
               value: '2023-05-31'
               '@type': StringCharacteristic
           attachment:
-            - description: Scanned Order
+            - id: abc123
+              description: Scanned Order
               attachmentType: orderCopy
               mimeType: image/png
               name: New Mobile Order
               url: 'https://mycsp.com:7070/docloader?docnum=3534888'
-              '@type': AttachmentRef
+              '@type': Attachment
           channel:
             id: '8774'
             name: self service
@@ -4421,17 +4328,17 @@ components:
             - id: '1'
               name: disputeAmount
               valueType: number
-              value: '40'
+              value: 40
               '@type': NumberCharacteristic
             - id: '2'
               name: creditAmount
               valueType: number
-              value: '40'
+              value: 40
               characteristicRelationship:
                 - id: '4'
                   relationshipType: dependency
                   '@type': CharacteristicRelationship
-              '@type': NubmerCharacteristic
+              '@type': NumberCharacteristic
             - id: '3'
               name: currency
               valueType: string
@@ -4443,12 +4350,13 @@ components:
               value: Network connectivity issues
               '@type': StringCharacteristic
           attachment:
-            - description: Scanned disputed bill
+            - id: abc123
+              description: Scanned disputed bill
               attachmentType: billCopy
               mimeType: image/png
               name: March Bill
               url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-              '@type': AttachmentRef
+              '@type': Attachment
           channel:
             id: '8774'
             name: self service
@@ -4521,7 +4429,6 @@ components:
               externalIdentifierType: Incident
               '@type': ExternalIdentifier
           '@type': TroubleTicket
-      description: Here's an example of a request for retrieving a list of trouble ticket(s).
     TroubleTicket_retrieve_example_response:
       value:
         id: '3180'
@@ -4545,17 +4452,17 @@ components:
           - id: '1'
             name: disputeAmount
             valueType: number
-            value: '40'
+            value: 40
             '@type': NumberCharacteristic
           - id: '2'
             name: creditAmount
             valueType: number
-            value: '40'
+            value: 40
             characteristicRelationship:
               - id: '4'
                 relationshipType: dependency
                 '@type': CharacteristicRelationship
-            '@type': NubmerCharacteristic
+            '@type': NumberCharacteristic
           - id: '3'
             name: currency
             valueType: string
@@ -4567,12 +4474,13 @@ components:
             value: Network connectivity issues
             '@type': StringCharacteristic
         attachment:
-          - description: Scanned disputed bill
+          - id: abc123
+            description: Scanned disputed bill
             attachmentType: billCopy
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
@@ -4646,7 +4554,6 @@ components:
             '@type': ExternalIdentifier
         '@schemaLocation': 'https://mycsp.com:8080/tmf-api/troubleTicket/5/schema/troubleTicket.yaml'
         '@type': TroubleTicket
-      description: Here's an example of a request for retrieving a spesific trouble ticket with id 3180.
     TroubleTicketSpecification_with_filter_and_fields_list_example_response:
       value:
         - id: '453180'
@@ -4664,9 +4571,6 @@ components:
           name: Network and latency TicketSpecification
           lifecycleStatus: active
           '@type': TroubleTicketSpecification
-      description: >-
-        Here's an example of a request for retrieving a list of trouble ticket specification(s). The
-        given criteria is lifecycleStatus is active, and fields id,href,name,@type,lifecycleStatus
     TroubleTicketSpecification_list_example_response:
       value:
         - href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/453180'
@@ -4681,7 +4585,6 @@ components:
           lastUpdate: '2022-06-22T10:36:30.709Z'
           relatedParty:
             - role: approver
-              '@referredType': Individual
               partyOrPartyRole:
                 id: '6678'
                 href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -4758,7 +4661,6 @@ components:
           lastUpdate: '2023-06-23T10:36:30.709Z'
           relatedParty:
             - role: approver
-              '@referredType': Individual
               partyOrPartyRole:
                 id: '6678'
                 href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -4786,9 +4688,6 @@ components:
           validFor:
             startDateTime: '2023-06-23T23:20:50.52Z'
           version: '1'
-      description: >-
-        Here's an example of a request for retrieving a list of trouble ticket
-        specification(s).       
     TroubleTicketSpecification_retrieve_example_response:
       value:
         href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
@@ -4802,7 +4701,6 @@ components:
         lastUpdate: '2022-06-22T10:36:30.709Z'
         relatedParty:
           - role: approver
-            '@referredType': Individual
             partyOrPartyRole:
               id: '6678'
               href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -4868,7 +4766,6 @@ components:
         validFor:
           startDateTime: '2022-06-22T23:20:50.52Z'
         version: '1'
-      description: Here's an example of a request for retrieving a spesific trouble ticket specification.
     TroubleTicket_create_example_request:
       value:
         name: complaint over last bill
@@ -4887,14 +4784,13 @@ components:
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
           '@type': ChannelRef
         note:
-          - id: '77456'
-            author: Jack Smith
+          - author: Jack Smith
             date: '2022-05-31T07:34:45.968Z'
             text: 'This is quite important, please aproch me as soon as posible'
             '@type': Note
@@ -4932,9 +4828,6 @@ components:
               '@type': PartyRoleRef
               '@referredType': Customer
         '@type': TroubleTicket
-      description: >-
-        POST trouble ticket request example - only a subset of trouble ticket attributes are used in
-        this example
     TroubleTicket_create_example_response:
       value:
         id: '3180'
@@ -4954,12 +4847,13 @@ components:
         statusChangeReason: Need more information from the customer
         ticketType: Bill Dispute
         attachment:
-          - description: Scanned disputed bill
+          - id: abc123
+            description: Scanned disputed bill
             attachmentType: billCopy
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
@@ -5016,7 +4910,6 @@ components:
             '@type': TroubleTicketRelationship
         '@schemaLocation': 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/schema/troubleTicket.yaml'
         '@type': TroubleTicket
-      description: POST Trouble Ticket response description.
     TroubleTicketSpecification_create_example_request:
       value:
         '@type': TroubleTicketSpecification
@@ -5027,7 +4920,6 @@ components:
         relatedParty:
           - role: approver
             '@type': RelatedPartyRefOrPartyRoleRef
-            '@referredType': Individual
             partyOrPartyRole:
               id: '6678'
               href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -5035,8 +4927,7 @@ components:
               '@type': PartyRef
               '@referredType': Individual
         specCharacteristic:
-          - id: '1'
-            configurable: true
+          - configurable: true
             description: >-
               The amount that is on dispute, it can be the entire charge amount or partial amount of
               the charge
@@ -5045,8 +4936,7 @@ components:
             name: disputeAmount
             valueType: number
             '@type': CharacteristicSpecification
-          - id: '2'
-            configurable: true
+          - configurable: true
             description: >-
               The positive amount to be credit, it can be equal or less than the dispute amount. In
               case credit is given a credit reason must be provided. In case no credit is given a
@@ -5057,15 +4947,14 @@ components:
             valueType: number
             '@type': CharacteristicSpecification
             charSpecRelationship:
-              - '@type': CharacteristicSpecRelationship
+              - '@type': CharacteristicSpecificationRelationship
                 '@baseType': CharacteristicSpecRelationship
                 '@schemaLocation': /someUri
                 characteristicSpecificationId: '3'
                 name: creditReason
                 relationshipType: dependency
                 parentSpecificationId: '25632415'
-          - id: '3'
-            configurable: true
+          - configurable: true
             description: >-
               The reason for giving the credit, in case credit apply. In case no credit apply a
               reject reason must be provided
@@ -5074,16 +4963,14 @@ components:
             name: creditReason
             valueType: string
             '@type': CharacteristicSpecification
-          - id: '4'
-            configurable: true
+          - configurable: true
             description: 'The reason for rejecting the dispute, in case no credit apply.'
             maxCardinality: 0
             minCardinality: 1
             name: rejectReason
             valueType: string
             '@type': CharacteristicSpecification
-          - id: '5'
-            configurable: true
+          - configurable: true
             description: Currency (ISO4217 norm uses 3 letters to define the currency)
             maxCardinality: 0
             minCardinality: 1
@@ -5093,9 +4980,6 @@ components:
         validFor:
           startDateTime: '2022-06-22T23:20:50.52Z'
         version: '1'
-      description: >-
-        POST trouble ticket request example - only a subset of trouble ticket specification
-        attributes are used in this example
     TroubleTicketSpecification_create_example_response:
       value:
         href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
@@ -5110,7 +4994,6 @@ components:
         relatedParty:
           - role: approver
             '@type': RelatedPartyRefOrPartyRoleRef
-            '@referredType': Individual
             partyOrPartyRole:
               id: '6678'
               href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -5176,15 +5059,11 @@ components:
         validFor:
           startDateTime: '2022-06-22T23:20:50.52Z'
         version: '1'
-      description: POST Trouble Ticket Specification response description.
     TroubleTicket_partialupdate_example_application_json_request:
       value:
         '@type': TroubleTicket
         status: resolved
         statusChangeReason: Give credit and resent bill to customer
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set status to resolved. This
-        example illustrating patch application/json
     TroubleTicket_partialupdate_example_application_json_response:
       value:
         id: '3180'
@@ -5197,7 +5076,7 @@ components:
         lastUpdate: '2022-06-01T07:34:45.968Z'
         name: complaint over last bill
         priority: High
-        requestedResDateolutionDate: '2022-05-31T07:34:45.968Z'
+        requestedResolutionDate: '2022-05-31T07:34:45.968Z'
         resolutionDate: '2022-06-01T07:34:45.968Z'
         severity: Major
         status: resolved
@@ -5205,12 +5084,13 @@ components:
         statusChangeReason: Give credit and resent bill to customer
         ticketType: Bill Dispute
         attachment:
-          - description: Scanned disputed bill
+          - id: abc123
+            description: Scanned disputed bill
             attachmentType: billCopy
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
@@ -5222,32 +5102,20 @@ components:
             text: 'This is quite important, please approach me as soon as possible'
             '@type': Note
         relatedEntity:
-          - id: '3472'
-            href: 'https://mycsp.com:8080/tmf-api/customerBillManagement/v5/customerBill/8297'
-            name: March 2022 Bill
-            role: disputedBill
+          - role: disputedBill
             '@type': RelatedEntity
-            '@referredType': CustomerBill
         relatedParty:
-          - id: '9866'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/5/individual/9866'
-            name: Sandy Smith
-            role: member
-            '@type': PartyRef
-            '@referredType': Individual
-          - id: '9176'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/customer/9176'
-            name: Jack Smith
-            role: customer
-            '@type': PartyRoleRef
-            '@referredType': Customer
+          - role: member
+            '@type': RelatedPartyRefOrPartyRoleRef
+          - role: customer
+            '@type': RelatedPartyRefOrPartyRoleRef
         statusChangeHistory:
           - statusChangeDate: '2022-05-31T07:34:45.968Z'
             statusChangeReason: Need more information from the customer
             status: pending
             '@type': StatusChange
-          - changeDate: '2022-06-01T07:34:45.968Z'
-            changeReason: Give credit and resent bill to customer
+          - statusChangeDate: '2022-06-01T07:34:45.968Z'
+            statusChangeReason: Give credit and resent bill to customer
             status: resolved
             '@type': StatusChange
         troubleTicketRelationship:
@@ -5258,15 +5126,11 @@ components:
             '@type': TroubleTicketRelationship
         '@schemaLocation': 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/schema/troubleTicket.yml'
         '@type': TroubleTicket
-      description: Response message
     TroubleTicket_partialupdate_example_application_merge_json_request:
       value:
         '@type': TroubleTicket
         status: resolved
         statusChangeReason: Give credit and resent bill to customer
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set status to resolved. This
-        example illustrating patch merge, When PATCH is implemeted merge syntaxt is mandatory
     TroubleTicket_partialupdate_example_application_merge_json_response:
       value:
         id: '3180'
@@ -5279,7 +5143,7 @@ components:
         lastUpdate: '2022-06-01T07:34:45.968Z'
         name: complaint over last bill
         priority: High
-        requestedResDateolutionDate: '2022-05-31T07:34:45.968Z'
+        requestedResolutionDate: '2022-05-31T07:34:45.968Z'
         resolutionDate: '2022-06-01T07:34:45.968Z'
         severity: Major
         status: resolved
@@ -5287,12 +5151,13 @@ components:
         statusChangeReason: Give credit and resent bill to customer
         ticketType: Bill Dispute
         attachment:
-          - description: Scanned disputed bill
+          - id: abc123
+            description: Scanned disputed bill
             attachmentType: billCopy
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
@@ -5304,32 +5169,20 @@ components:
             text: 'This is quite important, please approach me as soon as possible'
             '@type': Note
         relatedEntity:
-          - id: '3472'
-            href: 'https://mycsp.com:8080/tmf-api/customerBillManagement/v5/customerBill/8297'
-            name: March 2022 Bill
-            role: disputedBill
+          - role: disputedBill
             '@type': RelatedEntity
-            '@referredType': CustomerBill
         relatedParty:
-          - id: '9866'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/5/individual/9866'
-            name: Sandy Smith
-            role: member
-            '@type': PartyRef
-            '@referredType': Individual
-          - id: '9176'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/customer/9176'
-            name: Jack Smith
-            role: customer
-            '@type': PartyRoleRef
-            '@referredType': Customer
+          - role: member
+            '@type': RelatedPartyRefOrPartyRoleRef
+          - role: customer
+            '@type': RelatedPartyRefOrPartyRoleRef
         statusChangeHistory:
           - statusChangeDate: '2022-05-31T07:34:45.968Z'
             statusChangeReason: Need more information from the customer
             status: pending
             '@type': StatusChange
-          - changeDate: '2022-06-01T07:34:45.968Z'
-            changeReason: Give credit and resent bill to customer
+          - statusChangeDate: '2022-06-01T07:34:45.968Z'
+            statusChangeReason: Give credit and resent bill to customer
             status: resolved
             '@type': StatusChange
         troubleTicketRelationship:
@@ -5340,7 +5193,6 @@ components:
             '@type': TroubleTicketRelationship
         '@schemaLocation': 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/schema/troubleTicket.yml'
         '@type': TroubleTicket
-      description: Response message
     TroubleTicket_partialupdate_example_application_json_patch_request:
       value:
         - op: replace
@@ -5353,9 +5205,6 @@ components:
             id: '77456'
             author: Jack Smith
             text: 'This is quite important, please approach me as soon as possible'
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set severity to Minor and add
-        new Note. This example illustrating patch json
     TroubleTicket_partialupdate_example_application_json_patch_response:
       value:
         id: '3180'
@@ -5375,12 +5224,13 @@ components:
         statusChangeReason: Need more information from the customer
         ticketType: Bill Dispute
         attachment:
-          - description: Scanned disputed bill
+          - id: abc123
+            description: Scanned disputed bill
             attachmentType: billCopy
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
@@ -5392,40 +5242,26 @@ components:
             text: 'This is quite important, please approach me as soon as possible'
             '@type': Note
         relatedEntity:
-          - id: '3472'
-            href: 'https://mycsp.com:8080/tmf-api/customerBillManagement/v5/customerBill/8297'
-            name: March 2019 Bill
-            role: disputedBill
+          - role: disputedBill
             '@type': RelatedEntity
-            '@referredType': CustomerBill
         relatedParty:
-          - id: '9866'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/9866'
-            name: Sandy Smith
-            role: member
-            '@type': PartyRef
-            '@referredType': Individual
-          - id: '9176'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/customer/9176'
-            name: Jack Smith
-            role: customer
-            '@type': PartyRoleRef
-            '@referredType': Customer
+          - role: member
+            '@type': RelatedPartyRefOrPartyRoleRef
+          - role: customer
+            '@type': RelatedPartyRefOrPartyRoleRef
         statusChangeHistory:
           - statusChangeDate: '2019-05-31T07:34:45.968Z'
             statusChangeReason: Need more information from the customer
             status: pending
             '@type': StatusChange
         troubleTicketRelationship:
-          - TroubleTicket:
-              id: '567433'
-              href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicket/567433'
-              name: Network Coverage
-              relationshipType: dependecy
-              '@type': TroubleTicketRelationship
+          - id: '567433'
+            href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicket/567433'
+            name: Network Coverage
+            relationshipType: dependecy
+            '@type': TroubleTicketRelationship
         '@schemaLocation': 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/schema/troubleTicket.yml'
         '@type': TroubleTicket
-      description: Response message
     TroubleTicket_partialupdate_example_application_json_patch_query_request:
       value:
         - op: replace
@@ -5436,9 +5272,6 @@ components:
           value:
             author: Jack Smith
             text: Please approach me as soon as possible. Thanks in advance
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set severity to Minor and
-        update a specific Nate. This example illustrating patch json
     TroubleTicket_partialupdate_example_application_json_patch_query_response:
       value:
         id: '3180'
@@ -5458,12 +5291,13 @@ components:
         statusChangeReason: Need more information from the customer
         ticketType: Bill Dispute
         attachment:
-          - description: Scanned disputed bill
+          - id: abc123
+            description: Scanned disputed bill
             attachmentType: billCopy
             mimeType: image/png
             name: March Bill
             url: 'https://mycsp.com:7070/docloader?docnum=3534555'
-            '@type': AttachmentRef
+            '@type': Attachment
         channel:
           id: '8774'
           name: self service
@@ -5475,49 +5309,31 @@ components:
             text: Please approach me as soon as possible. Thanks in advance
             '@type': Note
         relatedEntity:
-          - id: '3472'
-            href: 'https://mycsp.com:8080/tmf-api/customerBillManagement/v5/customerBill/8297'
-            name: March 2022 Bill
-            role: disputedBill
+          - role: disputedBill
             '@type': RelatedEntity
-            '@referredType': CustomerBill
         relatedParty:
-          - id: '9866'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/9866'
-            name: Sandy Smith
-            role: member
-            '@type': PartyRef
-            '@referredType': Individual
-          - id: '9176'
-            href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/customer/9176'
-            name: Jack Smith
-            role: customer
-            '@type': PartyRoleRef
-            '@referredType': Customer
+          - role: member
+            '@type': RelatedPartyRefOrPartyRoleRef
+          - role: customer
+            '@type': RelatedPartyRefOrPartyRoleRef
         statusChangeHistory:
           - statusChangeDate: '2022-05-31T07:34:45.968Z'
             statusChangeReason: Need more information from the customer
             status: pending
             '@type': StatusChange
         troubleTicketRelationship:
-          - TroubleTicket:
-              id: '567433'
-              href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicket/567433'
-              name: Network Coverage
-              relationshipType: dependecy
-              '@type': TroubleTicketRelationship
+          - id: '567433'
+            href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicket/567433'
+            name: Network Coverage
+            relationshipType: dependecy
+            '@type': TroubleTicketRelationship
         '@schemaLocation': 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/schema/troubleTicket.yml'
         '@type': TroubleTicket
-      description: Response message
     TroubleTicketSpecification_partialupdate_application_json_request:
       value:
         lifecycleStatus: active
         description: Bill Dispute Specification
         '@type': TroubleTicketSpecification
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set status to active and
-        update description. This example illustrating patch merge, When PATCH is implemeted merge
-        syntaxt is mandatory
     TroubleTicketSpecification_partialupdate_application_json_response:
       value:
         href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
@@ -5532,7 +5348,6 @@ components:
         relatedParty:
           - role: approver
             '@type': RelatedPartyRefOrPartyRoleRef
-            '@referredType': Individual
             partyOrPartyRole:
               id: '6678'
               href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -5599,16 +5414,11 @@ components:
         validFor:
           startDateTime: '2022-06-22T23:20:50.52Z'
         version: '1'
-      description: Response message
     TroubleTicketSpecification_partialupdate_application_merge_json_request:
       value:
         lifecycleStatus: active
         description: Bill Dispute Specification
         '@type': TroubleTicketSpecification
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set status to active and
-        update description. This example illustrating patch merge, When PATCH is implemeted merge
-        syntaxt is mandatory
     TroubleTicketSpecification_partialupdate_application_merge_json_response:
       value:
         href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
@@ -5623,7 +5433,6 @@ components:
         relatedParty:
           - role: approver
             '@type': RelatedPartyRefOrPartyRoleRef
-            '@referredType': Individual
             partyOrPartyRole:
               id: '6678'
               href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -5690,7 +5499,6 @@ components:
         validFor:
           startDateTime: '2022-06-22T23:20:50.52Z'
         version: '1'
-      description: Response message
     TroubleTicketSpecification_partialupdate_application_json_patch_request:
       value:
         - op: replace
@@ -5699,9 +5507,6 @@ components:
         - op: replace
           path: /name
           value: Bill Dispute Specification
-      description: >-
-        Here's an example of a request for updating a trouble ticket spesification - set status to
-        active and update description. This example illustrating patch json
     TroubleTicketSpecification_partialupdate_application_json_patch_response:
       value:
         href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
@@ -5716,7 +5521,91 @@ components:
         relatedParty:
           - role: approver
             '@type': RelatedPartyRefOrPartyRoleRef
-            '@referredType': Individual
+            partyOrPartyRole:
+              id: '6678'
+              href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
+              name: Sara Smith
+              '@type': PartyRef
+              '@referredType': Individual
+        lifecycleStatus: active
+        specCharacteristic:
+          - id: '1'
+            configurable: true
+            description: >-
+              The amount that is on dispute, it can be the entire charge amount or partial amount of
+              the charge
+            maxCardinality: 0
+            minCardinality: 1
+            name: disputeAmount
+            valueType: number
+            '@type': CharacteristicSpecification
+          - id: '2'
+            configurable: true
+            description: >-
+              The positive amount to be credit, it can be equal or less than the dispute amount. In
+              case credit is given a credit reason must be provided. In case no credit is given a
+              reject reason must be provided
+            maxCardinality: 0
+            minCardinality: 1
+            name: creditAmount
+            valueType: number
+            '@type': CharacteristicSpecification
+            charSpecRelationship:
+              - '@type': CharacteristicSpecificationRelationship
+                '@schemaLocation': string
+                characteristicSpecificationId: '3'
+                name: creditReason
+                relationshipType: dependency
+                parentSpecificationId: '25632415'
+          - id: '3'
+            '@type': CharacteristicSpecification
+            configurable: true
+            description: >-
+              The reason for giving the credit, in case credit apply. In case no credit apply a
+              reject reason must be provided
+            maxCardinality: 0
+            minCardinality: 1
+            name: creditReason
+            valueType: string
+          - id: '4'
+            '@type': CharacteristicSpecification
+            configurable: true
+            description: 'The reason for rejecting the dispute, in case no credit apply.'
+            maxCardinality: 0
+            minCardinality: 1
+            name: rejectReason
+            valueType: string
+          - id: '5'
+            '@type': CharacteristicSpecification
+            configurable: true
+            description: Currency (ISO4217 norm uses 3 letters to define the currency)
+            maxCardinality: 0
+            minCardinality: 1
+            name: currency
+            valueType: string
+        validFor:
+          startDateTime: '2022-06-22T23:20:50.52Z'
+        version: '1'
+    TroubleTicketSpecification_partialupdate_application_json_patch_query_request:
+      value:
+        - op: replace
+          path: /specCharacteristic?id=5
+          value:
+            configurable: false
+    TroubleTicketSpecification_partialupdate_application_json_patch_query_response:
+      value:
+        href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
+        id: '25632415'
+        '@type': TroubleTicketSpecification
+        description: >-
+          This trouble ticket specification describes the characteristic and rules to apply when
+          creating a Trouble Ticket...
+        creationDate: '2022-05-22T10:36:30.709Z'
+        lastUpdate: '2022-06-22T10:36:30.709Z'
+        name: Bill Dispute Specification
+        relatedParty:
+          - role: approver
+            '@type': RelatedPartyRefOrPartyRoleRef
             partyOrPartyRole:
               id: '6678'
               href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
@@ -5747,92 +5636,6 @@ components:
             valueType: number
             charSpecRelationship:
               - '@type': CharacteristicSpecificationRelationship
-                '@schemaLocation': string
-                characteristicSpecificationId: '3'
-                name: creditReason
-                relationshipType: dependency
-                parentSpecificationId: '25632415'
-          - id: '3'
-            configurable: true
-            description: >-
-              The reason for giving the credit, in case credit apply. In case no credit apply a
-              reject reason must be provided
-            maxCardinality: 0
-            minCardinality: 1
-            name: creditReason
-            valueType: string
-          - id: '4'
-            configurable: true
-            description: 'The reason for rejecting the dispute, in case no credit apply.'
-            maxCardinality: 0
-            minCardinality: 1
-            name: rejectReason
-            valueType: string
-          - id: '5'
-            configurable: true
-            description: Currency (ISO4217 norm uses 3 letters to define the currency)
-            maxCardinality: 0
-            minCardinality: 1
-            name: currency
-            valueType: string
-        validFor:
-          startDateTime: '2022-06-22T23:20:50.52Z'
-        version: '1'
-      description: Response message
-    TroubleTicketSpecification_partialupdate_application_json_patch_query_request:
-      value:
-        - op: replace
-          path: /specCharacteristic?id=5
-          value:
-            configurable: false
-      description: >-
-        Here's an example of a request for updating a trouble ticket - set characteristic id=5 to
-        readonly. This example illustrating patch query json
-    TroubleTicketSpecification_partialupdate_application_json_patch_query_response:
-      value:
-        href: 'https://mycsp.com:8080/tmf-api/troubleTicket/v5/troubleTicketSpecification/25632415'
-        id: '25632415'
-        '@type': TroubleTicketSpecification
-        description: >-
-          This trouble ticket specification describes the characteristic and rules to apply when
-          creating a Trouble Ticket...
-        creationDate: '2022-05-22T10:36:30.709Z'
-        lastUpdate: '2022-06-22T10:36:30.709Z'
-        name: Bill Dispute Specification
-        relatedParty:
-          - role: approver
-            '@type': RelatedPartyRefOrPartyRoleRef
-            '@referredType': Individual
-            partyOrPartyRole:
-              id: '6678'
-              href: 'https://mycsp.com:8080/tmf-api/partyManagement/v5/individual/6678'
-              name: Sara Smith
-              '@type': PartyRef
-              '@referredType': Individual
-        lifecycleStatus: active
-        specCharacteristic:
-          - id: '1'
-            configurable: true
-            description: >-
-              The amount that is on dispute, it can be the entire charge amount or partial amount of
-              the charge
-            maxCardinality: 0
-            minCardinality: 1
-            name: disputeAmount
-            valueType: number
-            '@type': CharacteristicSpecification
-          - id: '2'
-            configurable: true
-            description: >-
-              The positive amount to be credit, it can be equal or less than the dispute amount. In
-              case credit is given a credit reason must be provided. In case no credit is given a
-              reject reason must be provided
-            maxCardinality: 0
-            minCardinality: 1
-            name: creditAmount
-            valueType: number
-            charSpecRelationship:
-              - '@type': string
                 '@baseType': string
                 '@schemaLocation': string
                 characteristicSpecificationId: '3'
@@ -5869,7 +5672,6 @@ components:
         validFor:
           startDateTime: '2022-06-22T23:20:50.52Z'
         version: '1'
-      description: Response message
     TroubleTicketCreateEvent_request:
       value:
         correlationId: 95003dd3-e325

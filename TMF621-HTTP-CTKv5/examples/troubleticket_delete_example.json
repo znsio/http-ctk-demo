@@ -1,0 +1,16 @@
+{
+    "name": "TroubleTicket delete example",
+    "request-file": null,
+    "response-file": null,
+    "http-request": {
+        "path": "/troubleTicket/3180",
+        "method": "DELETE"
+    },
+    "http-response": {
+        "status": 204,
+        "status-text": "OK",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ctk:
-    image: znsio/specmatic:2.0.18
+    image: znsio/specmatic:latest
     environment:
       MAX_TEST_REQUEST_COMBINATIONS: 5
       EXTENSIBLE_SCHEMA: 'true'

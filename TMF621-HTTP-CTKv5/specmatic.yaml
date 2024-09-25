@@ -1,13 +1,13 @@
 contract_repositories:
-  - type: git
-    repository: https://github.com/znsio/http-ctk-demo.git
+  - type: filesystem
     provides:
-      - specifications/TMF621/TMF621-Trouble_Ticket-v5.0.0.oas.fixed.yaml
+      - TroubleTicket-updated.yaml
+
+ignoreInlineExamples: true
 
 test:
   resiliencyTests:
     enable: none
-  validateResponseValues: true
 
 workflow:
   ids:
@@ -21,10 +21,10 @@ report:
     - type: text
       layout: table
     - type: html
-      title: CTK Results
-      heading: CTK Results
+      title: CTK Results (TMF621 Trouble Ticket v5.0.0)
+      heading: CTK Results (TMF621 Trouble Ticket v5.0.0)
       lite: true
-      logo: "/Users/joelrosario/Source/tmforum/async-app/ctk-generator/assets/report/img/tmf-logo.svg"
+      logo: "../assets/images/tmf-logo.svg"
       logoAltText: "TMForum"
   types:
     APICoverage:
@@ -33,18 +33,3 @@ report:
           minThresholdPercentage: 1
           maxMissedEndpointsInSpec: 0
           enforce: true
-        excludedEndpoints:
-          - /hub
-          - /hub/{id}
-          - /listener/troubleTicketAttributeValueChangeEvent
-          - /listener/troubleTicketCreateEvent
-          - /listener/troubleTicketDeleteEvent
-          - /listener/troubleTicketInformationRequiredEvent
-          - /listener/troubleTicketResolvedEvent
-          - /listener/troubleTicketSpecificationAttributeValueChangeEvent
-          - /listener/troubleTicketSpecificationCreateEvent
-          - /listener/troubleTicketSpecificationDeleteEvent
-          - /listener/troubleTicketSpecificationStatusChangeEvent
-          - /listener/troubleTicketStatusChangeEvent
-          - /troubleTicketSpecification
-          - /troubleTicketSpecification/{id}
